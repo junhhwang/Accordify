@@ -11,87 +11,83 @@
 </head>
 <body class="bg-white text-gray-900">
   <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100">
-    <nav class="px-6 md:px-12 py-3 max-w-6xl mx-auto flex items-center justify-between">
+    <div class="px-6 md:px-12 py-3 max-w-6xl mx-auto flex items-center justify-between">
       <a href="../index_new.html" class="text-2xl font-extrabold text-gray-900">Accordify</a>
-      <div class="flex items-center gap-6">
-        <a href="../pricing.html" class="text-gray-700 hover:text-gray-900">Pricing</a>
-        <a href="../privacy.html" class="text-gray-700 hover:text-gray-900">Privacy</a>
-        <a href="../index_new.html#contact" class="bg-primary text-white px-4 py-2 rounded-md">Contact</a>
-      </div>
+      
+    <nav class="text-sm text-gray-500" aria-label="Breadcrumb">
+      <ol class="flex items-center gap-1">
+        <li><a class="underline" href="../index_new.html">Home</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a class="underline" href="../index_new.html#services">Services</a></li>
+        <li aria-hidden="true">/</li>
+        <li aria-current="page" class="text-gray-700">Legal Consultation</li>
+      </ol>
     </nav>
+      <a href="../index_new.html#contact" class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700">Contact</a>
+    </div>
   </header>
 
   <main class="px-6 md:px-12">
-    <section class="max-w-6xl mx-auto py-12 md:py-16">
-      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">Legal Consultation</h1>
-      <p class="text-lg text-gray-600 mt-3 max-w-3xl">Get pragmatic guidance on incorporation, equity, hiring, IP, and fundraising—tailored to your situation.</p>
+    <section class="max-w-6xl mx-auto py-10 md:py-14">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">Legal Consultation</h1>
+          <p class="text-lg text-gray-600 mt-3 max-w-3xl">Scenario-based legal guidance for student founders and early-stage teams.</p>
+        </div>
+        <a href="../index_new.html#services" class="hidden md:inline-flex items-center gap-2 bg-gray-900 text-white px-4 py-2 rounded-md hover:bg-black">
+          ← Back to Services
+        </a>
+      </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
         <div class="bg-white rounded-xl border border-gray-100 p-6 shadow-card">
           <h2 class="text-xl font-bold mb-2">Formation</h2>
           <p class="text-gray-600">Choosing jurisdiction and structure; common pitfalls to avoid.</p>
         </div>
-        <div class="bg-white rounded-xl border border-gray-100 p-6 shadow-card">
+<div class="bg-white rounded-xl border border-gray-100 p-6 shadow-card">
           <h2 class="text-xl font-bold mb-2">Equity & Vesting</h2>
           <p class="text-gray-600">Splits, cliffs, option pools, and founder departures.</p>
         </div>
-        <div class="bg-white rounded-xl border border-gray-100 p-6 shadow-card">
+<div class="bg-white rounded-xl border border-gray-100 p-6 shadow-card">
           <h2 class="text-xl font-bold mb-2">IP & Confidentiality</h2>
           <p class="text-gray-600">Ownership, assignments, NDAs, and protecting know-how.</p>
         </div>
       </div>
 
       <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="bg-gray-light rounded-xl p-8 border border-gray-200">
-          <h3 class="text-2xl font-bold mb-3">What to expect</h3>
-          <ul class="list-disc ml-5 text-gray-700 space-y-2">
-            <li>Pre-call questionnaire to focus time</li>
-            <li>30–45 minute session with action items</li>
-            <li>Follow-up summary and resources</li>
-          </ul>
+        <div class="bg-gray-50 rounded-xl p-8 border border-gray-200">
+          <h3 class="text-2xl font-bold mb-3">How it works</h3>
+          <ol class="list-decimal ml-5 text-gray-700 space-y-2">
+            <li>Answer a short intake form.</li>
+            <li>Review a preview and iterate.</li>
+            <li>Export and share with your team.</li>
+          </ol>
         </div>
         <div class="bg-white rounded-xl p-8 border border-gray-100 shadow-card">
-          <h3 class="text-2xl font-bold mb-3">Who it’s for</h3>
+          <h3 class="text-2xl font-bold mb-3">What you get</h3>
           <ul class="list-disc ml-5 text-gray-700 space-y-2">
-            <li>First-time founders</li>
-            <li>Students forming cap-table agreements</li>
-            <li>Teams preparing for a prototype or grant</li>
+            <li>Editable, reusable deliverables</li>
+            <li>Clear rationale for key clauses</li>
+            <li>Follow-up checklist</li>
           </ul>
         </div>
       </div>
 
-      <div class="mt-12 flex items-center gap-3">
-        <a href="../index_new.html#contact" class="bg-primary text-white px-6 py-3 rounded-md font-semibold">Book a session</a>
+      <div class="mt-12 flex flex-wrap items-center gap-3">
+        <a href="../index_new.html#contact" class="bg-indigo-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-indigo-700">Book a session</a>
         <a href="../pricing.html" class="text-gray-700 underline underline-offset-4">See pricing</a>
+        <a href="../index_new.html#services" class="md:hidden inline-flex items-center gap-2 text-gray-700 underline underline-offset-4">← Back to Services</a>
       </div>
     </section>
   </main>
 
-  <div id="ctaSticky" class="fixed left-0 right-0 bottom-0 z-50">
-    <div class="mx-auto max-w-6xl px-4">
-      <div class="rounded-2xl border border-gray-200 bg-white shadow-card p-4 md:p-5 flex flex-col md:flex-row items-center justify-between gap-3">
-        <div class="text-center md:text-left">
-          <div class="text-sm text-gray-500">Make decisions confidently</div>
-          <div class="text-lg md:text-xl font-semibold text-gray-900">Book a consultation and get a clear action plan.</div>
-        </div>
-        <div class="flex items-center gap-3">
-          <a href="../index_new.html#contact" class="px-5 py-2 rounded-md bg-primary text-white hover:bg-opacity-90">Book now</a>
-          <button id="ctaClose" class="p-2 text-gray-500 hover:text-gray-700" aria-label="Dismiss banner">
-            <i class="fa fa-times"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <footer class="bg-dark text-white py-8">
+  <footer class="bg-gray-900 text-white py-8">
     <div class="max-w-6xl mx-auto px-6 md:px-12 text-center text-white/70">
-      © <span id="y2"></span> Accordify — Legal Consultation
+      © <span id="y"></span> Accordify — Legal Consultation
     </div>
   </footer>
   <script>
-    document.getElementById('y2').textContent=new Date().getFullYear();
-    (function(){ const key='cta_consult'; const bar=document.getElementById('ctaSticky'); const btn=document.getElementById('ctaClose'); if(localStorage.getItem(key)==='1') bar.style.display='none'; btn?.addEventListener('click',()=>{ bar.style.display='none'; localStorage.setItem(key,'1'); }); })();
+    document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>

@@ -22,30 +22,6 @@
   <link rel="preconnect" href="https://plausible.io" crossorigin>
   <meta name="theme-color" content="#0B1020"/>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Accordify",
-    "url": "https://junhhwang.github.io/Accordify/",
-    "logo": "https://junhhwang.github.io/Accordify/assets/og-image.png",
-    "sameAs": []
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Accordify",
-    "url": "https://junhhwang.github.io/Accordify/",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://junhhwang.github.io/Accordify/?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
-
   <style>
     body { font-family:'Inter',system-ui,sans-serif; }
     .hero-gradient{ background:linear-gradient(180deg, #0B1020 0%, #0B1020 60%, #101631 100%); }
@@ -76,7 +52,7 @@
         </div>
         <div class="hidden md:flex items-center gap-3">
           <a href="./pricing.html" class="text-white/90 hover:text-white underline underline-offset-4">See pricing</a>
-          <a href="#contact" class="bg-primary text-white px-5 py-2 rounded-md hover:bg-opacity-90 transition-colors">Get Started</a>
+          <a href="#contact" class="bg-indigo-600 text-white px-5 py-2 rounded-md hover:bg-indigo-700 transition-colors">Get Started</a>
         </div>
         <button id="menuBtn" class="md:hidden text-white p-2 rounded hover:bg-white/10" aria-label="Toggle menu" aria-controls="mobileMenu" aria-expanded="false">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -89,7 +65,7 @@
           <a href="#about" class="block text-white/90 hover:text-white px-3 py-2 rounded">About</a>
           <a href="#testimonials" class="block text-white/90 hover:text-white px-3 py-2 rounded">Testimonials</a>
           <a href="#agreement-generator" class="block text-white/90 hover:text-white px-3 py-2 rounded">Generator</a>
-          <a href="#contact" class="block bg-primary text-white mt-2 px-3 py-2 rounded">Get Started</a>
+          <a href="#contact" class="block bg-indigo-600 text-white mt-2 px-3 py-2 rounded">Get Started</a>
         </div>
       </div>
     </nav>
@@ -105,7 +81,7 @@
           <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">Professional startup agreements—built in minutes</h1>
           <p class="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mt-4">Accordify gives you clear, customizable legal templates and guidance so you can move fast—without cutting corners.</p>
           <div class="mt-8 flex items-center justify-center gap-4">
-            <a href="#agreement-generator" class="bg-primary text-white px-7 py-3 rounded-md font-semibold hover:bg-opacity-90">Create an Agreement</a>
+            <a href="#agreement-generator" class="bg-indigo-600 text-white px-7 py-3 rounded-md font-semibold hover:bg-indigo-700 focus:outline-none focus-visible:ring-4 focus-visible:ring-indigo-300">Create an Agreement</a>
             <a href="./pricing.html" class="text-white/90 hover:text-white underline underline-offset-4">See Pricing</a>
           </div>
         </div>
@@ -143,7 +119,7 @@
               <div class="p-6">
                 <h3 class="text-xl font-bold mb-2">Legal Document Preparation</h3>
                 <p class="text-gray-600 mb-4">Founders agreements, IP assignment, contractor and employee agreements—precisely tailored to your inputs.</p>
-                <span class="text-primary font-medium hover:underline">Learn more →</span>
+                <span class="text-indigo-600 font-medium hover:underline">Learn more →</span>
               </div>
             </a>
           </article>
@@ -155,7 +131,7 @@
               <div class="p-6">
                 <h3 class="text-xl font-bold mb-2">Legal Consultation</h3>
                 <p class="text-gray-600 mb-4">Scenario-based guidance from startup-savvy mentors and advisors to help you avoid common pitfalls.</p>
-                <span class="text-primary font-medium hover:underline">Learn more →</span>
+                <span class="text-indigo-600 font-medium hover:underline">Learn more →</span>
               </div>
             </a>
           </article>
@@ -167,7 +143,7 @@
               <div class="p-6">
                 <h3 class="text-xl font-bold mb-2">Compliance Assistance</h3>
                 <p class="text-gray-600 mb-4">Practical checklists and guidance so your startup stays aligned with relevant regulations from day one.</p>
-                <span class="text-primary font-medium hover:underline">Learn more →</span>
+                <span class="text-indigo-600 font-medium hover:underline">Learn more →</span>
               </div>
             </a>
           </article>
@@ -175,7 +151,7 @@
       </div>
     </section>
 
-    <section id="about" class="py-16 md:py-20 px-6 md:px-12 bg-gray-light">
+    <section id="about" class="py-16 md:py-20 px-6 md:px-12 bg-gray-50">
       <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div class="fade-in">
           <h2 class="text-3xl md:text-4xl font-extrabold mb-6">Why Accordify</h2>
@@ -184,7 +160,7 @@
             <li><strong>Speed with confidence:</strong> guided inputs, smart defaults, and editable outputs.</li>
             <li><strong>Built for students & early teams:</strong> pragmatic patterns validated across 200+ cases.</li>
           </ul>
-          <a href="#agreement-generator" class="inline-block mt-6 bg-primary text-white px-7 py-3 rounded-md font-semibold hover:bg-opacity-90">Try the Generator</a>
+          <a href="#agreement-generator" class="inline-block mt-6 bg-indigo-600 text-white px-7 py-3 rounded-md font-semibold hover:bg-indigo-700 focus:outline-none focus-visible:ring-4 focus-visible:ring-indigo-300">Try the Generator</a>
         </div>
         <div class="fade-in">
           <img loading="lazy" src="https://picsum.photos/id/1071/900/650" alt="Founders collaborating" class="rounded-xl shadow-card w-full h-auto"/>
@@ -201,34 +177,34 @@
               <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
             </div>
             <blockquote class="text-gray-800">“Accordify let us finalize a founders agreement in one afternoon. The templates are clear and customizable.”</blockquote>
-            <figcaption class="mt-4 text-sm text-gray-500">Sarah J., Co-founder</figcaption>
+            <figcaption class="mt-4 text-sm text-gray-500">Jun H., Co-founder</figcaption>
           </figure>
           <figure class="bg-white rounded-xl p-6 border border-gray-100 shadow-card">
             <div class="text-yellow-500 mb-3" aria-label="5 out of 5 stars">
               <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
             </div>
             <blockquote class="text-gray-800">“We avoided several pitfalls thanks to the consultation notes and checklists.”</blockquote>
-            <figcaption class="mt-4 text-sm text-gray-500">Michael C., Founder</figcaption>
+            <figcaption class="mt-4 text-sm text-gray-500">Anton B., Founder</figcaption>
           </figure>
           <figure class="bg-white rounded-xl p-6 border border-gray-100 shadow-card">
             <div class="text-yellow-500 mb-3" aria-label="5 out of 5 stars">
               <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
             </div>
             <blockquote class="text-gray-800">“Great balance of speed and legal safeguards for early-stage teams.”</blockquote>
-            <figcaption class="mt-4 text-sm text-gray-500">Emily R., Co-founder</figcaption>
+            <figcaption class="mt-4 text-sm text-gray-500">Emma H., Co-founder</figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <section id="agreement-generator" class="py-16 md:py-20 px-6 md:px-12 bg-gray-light">
+    <section id="agreement-generator" class="py-16 md:py-20 px-6 md:px-12 bg-gray-50">
       <div class="max-w-7xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-14">Founders Agreement Generator</h2>
 
         <div class="bg-white border border-gray-200 rounded-xl p-6 md:p-8 shadow-card">
           <div id="app" class="max-w-7xl mx-auto">
             <header class="mb-8">
-              <h3 class="text-2xl md:text-3xl font-bold text-primary mb-2">Accordify</h3>
+              <h3 class="text-2xl md:text-3xl font-bold text-indigo-600 mb-2">Accordify</h3>
               <p class="text-gray-600">Build your startup's founders agreement with confidence</p>
             </header>
 
@@ -237,7 +213,11 @@
                 <div class="bg-gray-50 rounded-lg p-6 lg:sticky lg:top-4">
                   <h4 class="text-xl font-semibold mb-2">Founders Agreement</h4>
                   <p class="text-gray-600 mb-4">Define equity, roles, IP, and vesting with clarity.</p>
-                  <button onclick="showTemplateDetails()" class="w-full bg-primary text-white py-3 px-6 rounded-lg font-semibold hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl">Start Creating</button>
+                  <button onclick="showTemplateDetails()"
+                    class="w-full bg-gray-900 text-white py-3.5 px-6 rounded-lg font-semibold hover:bg-black
+                           focus:outline-none focus-visible:ring-4 focus-visible:ring-gray-300 transition-all shadow-lg hover:shadow-xl">
+                    Start Creating
+                  </button>
                 </div>
               </aside>
 
@@ -265,7 +245,7 @@
                   <div id="previewContent" class="p-8 max-h-[70vh] overflow-y-auto"></div>
                   <div class="p-6 border-t border-gray-200 flex justify-end gap-3 no-print">
                     <button type="button" onclick="closePreview()" class="px-6 py-2 text-gray-700 hover:bg-gray-100 rounded-lg">Close</button>
-                    <button type="button" onclick="downloadDocument()" class="px-6 py-2 bg-primary text-white hover:bg-opacity-90 rounded-lg">Download as HTML</button>
+                    <button type="button" onclick="downloadDocument()" class="px-6 py-2 bg-indigo-600 text-white hover:bg-indigo-700 rounded-lg">Download as HTML</button>
                   </div>
                 </div>
               </div>
@@ -303,7 +283,7 @@ A Founders Agreement outlines the relationship between co-founders of a startup.
                   <div class="space-y-6">
                     <div class="text-center">
                       <h1 class="text-3xl font-bold mb-2">FOUNDERS AGREEMENT</h1>
-                      <p class="text-lg>${data.companyName}</p>
+                      <p class="text-lg">${data.companyName}</p>
                       <p class="text-sm text-gray-600">Effective Date: ${new Date().toLocaleDateString()}</p>
                     </div>
                     <div class="border-t border-gray-300 pt-6">
@@ -409,9 +389,9 @@ A Founders Agreement outlines the relationship between co-founders of a startup.
                           <input type="${field.type}" name="${field.name}" ${field.required ? 'required' : ''}
                                  ${field.min!==undefined ? `min="${field.min}"` : ''} ${field.max!==undefined ? `max="${field.max}"` : ''}
                                  ${field.step ? `step="${field.step}"` : ''} ${field.value!==undefined ? `value="${field.value}"` : ''}
-                                 class="w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-primary"/>
+                                 class="w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-indigo-600"/>
                         </div>`).join('')}
-                      <button type="submit" class="w-full bg-primary text-white py-3 px-6 rounded-lg font-semibold hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl">
+                      <button type="submit" class="w-full bg-indigo-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-indigo-700 focus:outline-none focus-visible:ring-4 focus-visible:ring-indigo-300 transition-all shadow-lg hover:shadow-xl">
                         Generate Agreement
                       </button>
                     </form>
@@ -470,56 +450,56 @@ A Founders Agreement outlines the relationship between co-founders of a startup.
             <form id="contactForm" class="space-y-6" novalidate>
               <div>
                 <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
-                <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"/>
+                <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-600"/>
               </div>
               <div>
                 <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
-                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"/>
+                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-600"/>
               </div>
               <div>
                 <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
-                <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-600"></textarea>
               </div>
-              <button type="submit" class="w-full bg-primary text-white py-3 px-6 rounded-md hover:bg-opacity-90 transition-colors">Send Message</button>
+              <button type="submit" class="w-full bg-indigo-600 text-white py-3 px-6 rounded-md hover:bg-indigo-700 transition-colors">Send Message</button>
             </form>
           </div>
           <aside class="fade-in">
-            <div class="bg-gray-light p-8 rounded-lg h-full border border-gray-200">
+            <div class="bg-gray-50 p-8 rounded-lg h-full border border-gray-200">
               <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
               <div class="space-y-6">
                 <div class="flex items-start">
-                  <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4"><i class="fa fa-map-marker text-primary"></i></div>
+                  <div class="w-10 h-10 bg-indigo-50 rounded-full flex items-center justify-center mr-4"><i class="fa fa-map-marker text-indigo-600"></i></div>
                   <div>
                     <h4 class="font-bold mb-1">Address</h4>
                     <p class="text-gray-700">LITE Lab Room 802, Cheng Yu Tung Tower, Centennial Campus, HKU</p>
                   </div>
                 </div>
                 <div class="flex items-start">
-                  <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4"><i class="fa fa-envelope text-primary"></i></div>
+                  <div class="w-10 h-10 bg-indigo-50 rounded-full flex items-center justify-center mr-4"><i class="fa fa-envelope text-indigo-600"></i></div>
                   <div>
                     <h4 class="font-bold mb-1">Email</h4>
-                    <p class="text-gray-700"><a href="mailto:jhwang23@connect.hku.hk" class="underline text-primary">jhwang23@connect.hku.hk</a></p>
+                    <p class="text-gray-700"><a href="mailto:jhwang23@connect.hku.hk" class="underline text-indigo-600">jhwang23@connect.hku.hk</a></p>
                   </div>
                 </div>
                 <div class="flex items-start">
-                  <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4"><i class="fa fa-phone text-primary"></i></div>
+                  <div class="w-10 h-10 bg-indigo-50 rounded-full flex items-center justify-center mr-4"><i class="fa fa-phone text-indigo-600"></i></div>
                   <div>
                     <h4 class="font-bold mb-1">Contact</h4>
-                    <p class="text-gray-700"><a href="tel:+85262749588" class="underline text-primary">+852-6274-9588</a></p>
+                    <p class="text-gray-700"><a href="tel:+85262749588" class="underline text-indigo-600">+852-6274-9588</a></p>
                   </div>
                 </div>
               </div>
               <div class="mt-10">
                 <h4 class="font-bold mb-4">Follow</h4>
                 <div class="flex space-x-4">
-                  <a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition-colors" aria-label="Twitter">
-                    <i class="fa fa-twitter text-primary"></i>
+                  <a href="#" class="w-10 h-10 bg-indigo-50 rounded-full flex items-center justify-center hover:bg-indigo-100 transition-colors" aria-label="Twitter">
+                    <i class="fa fa-twitter text-indigo-600"></i>
                   </a>
-                  <a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition-colors" aria-label="LinkedIn">
-                    <i class="fa fa-linkedin text-primary"></i>
+                  <a href="#" class="w-10 h-10 bg-indigo-50 rounded-full flex items-center justify-center hover:bg-indigo-100 transition-colors" aria-label="LinkedIn">
+                    <i class="fa fa-linkedin text-indigo-600"></i>
                   </a>
-                  <a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition-colors" aria-label="Instagram">
-                    <i class="fa fa-instagram text-primary"></i>
+                  <a href="#" class="w-10 h-10 bg-indigo-50 rounded-full flex items-center justify-center hover:bg-indigo-100 transition-colors" aria-label="Instagram">
+                    <i class="fa fa-instagram text-indigo-600"></i>
                   </a>
                 </div>
               </div>
@@ -530,7 +510,7 @@ A Founders Agreement outlines the relationship between co-founders of a startup.
     </section>
   </main>
 
-  <footer class="bg-dark text-white py-12 px-6 md:px-12" role="contentinfo">
+  <footer class="bg-gray-900 text-white py-12 px-6 md:px-12" role="contentinfo">
     <div class="max-w-6xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
@@ -578,7 +558,7 @@ A Founders Agreement outlines the relationship between co-founders of a startup.
         </div>
         <div class="flex items-center gap-3">
           <a href="./pricing.html" class="px-4 py-2 rounded-md border border-gray-300 text-gray-700 hover:bg-gray-50">See pricing</a>
-          <a href="#contact" class="px-5 py-2 rounded-md bg-primary text-white hover:bg-opacity-90">Book a session</a>
+          <a href="#contact" class="px-5 py-2 rounded-md bg-indigo-600 text-white hover:bg-indigo-700">Book a session</a>
           <button id="ctaClose" class="p-2 text-gray-500 hover:text-gray-700" aria-label="Dismiss banner">
             <i class="fa fa-times"></i>
           </button>

@@ -1,854 +1,647 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StartupLegal - Legal Solutions for Startups</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#5D5CDE',
-                        dark: '#0A0A0A',
-                        light: '#FFFFFF',
-                        gray: {
-                            light: '#F5F5F5',
-                            medium: '#8A8A8A',
-                            dark: '#333333'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            font-family: 'Inter', system-ui, sans-serif;
-        }
-        
-        .hero-gradient {
-            background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.95));
-        }
-        
-        .section-transition {
-            position: relative;
-            height: 50px;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.95), #FFFFFF);
-        }
-        
-        .section-transition-dark {
-            position: relative;
-            height: 50px;
-            background: linear-gradient(to bottom, #FFFFFF, rgba(0,0,0,0.95));
-        }
-        
-        .card-hover {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        .testimonial-card {
-            transition: transform 0.3s ease;
-        }
-        
-        .testimonial-card:hover {
-            transform: scale(1.02);
-        }
-        
-        /* Animation classes */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        
-        .fade-in.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Navbar scroll effect */
-        .navbar-fixed {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 50;
-            background-color: rgba(0,0,0,0.9);
-            transition: background-color 0.3s ease;
-        }
-        
-        /* For the embedded agreement generator */
-        .embedded-generator {
-            background-color: #FFFFFF;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Accordify — Startup Agreements & Legal Guidance</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+  <script defer data-domain="junhhwang.github.io" src="https://plausible.io/js/script.js"></script>
+
+  <meta name="description" content="Accordify helps student founders and early-stage startups create professional agreements and access clear legal guidance."/>
+  <meta property="og:title" content="Accordify — Startup Agreements & Legal Guidance"/>
+  <meta property="og:description" content="Create founders agreements, access legal consultation, and stay compliant—fast."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://junhhwang.github.io/Accordify/index_new.html"/>
+  <meta property="og:image" content="https://picsum.photos/1200/630?random=9"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <link rel="canonical" href="https://junhhwang.github.io/Accordify/index_new.html"/>
+  <link rel="icon" href="favicon.ico"/>
+  <link rel="apple-touch-icon" href="favicon.ico"/>
+  <link rel="preconnect" href="https://plausible.io" crossorigin>
+  <meta name="theme-color" content="#0B1020"/>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Accordify",
+    "url": "https://junhhwang.github.io/Accordify/",
+    "logo": "https://junhhwang.github.io/Accordify/assets/og-image.png",
+    "sameAs": []
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Accordify",
+    "url": "https://junhhwang.github.io/Accordify/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://junhhwang.github.io/Accordify/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <style>
+    body { font-family:'Inter',system-ui,sans-serif; }
+    .hero-gradient{ background:linear-gradient(180deg, #0B1020 0%, #0B1020 60%, #101631 100%); }
+    .navbar-fixed{ position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(8px); background-color:rgba(10,10,10,.86); border-bottom:1px solid rgba(255,255,255,.06); }
+    .card-hover{ transition: transform .25s ease, box-shadow .25s ease; }
+    .card-hover:hover{ transform:translateY(-4px); box-shadow:0 18px 40px rgba(0,0,0,.15); }
+    .fade-in{ opacity:0; transform:translateY(16px); }
+    .fade-in.active{ opacity:1; transform:none; transition:opacity .6s ease, transform .6s ease; }
+    section[id]{ scroll-margin-top: 90px; }
+    .cta-sticky{ position:fixed; left:0; right:0; bottom:0; z-index:60; }
+    .sr-skip{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+    .sr-skip:focus{ position:static; width:auto; height:auto; margin:8px; padding:8px 12px; background:#fff; color:#000; border-radius:6px; }
+  </style>
 </head>
 <body class="bg-white text-gray-900">
-    <!-- Navigation -->
-    <nav id="navbar" class="py-4 px-6 md:px-12 flex justify-content-between items-items-center transition-all duration-300">
-        <div class="flex items-center">
-            <a href="#" class="text-2xl font-bold text-primary">StartupLegal</a>
+  <a href="#main" class="sr-skip">Skip to content</a>
+
+  <header class="navbar-fixed" role="banner">
+    <nav class="px-6 md:px-12 py-3" aria-label="Primary">
+      <div class="max-w-6xl mx-auto flex items-center justify-between">
+        <a href="./index_new.html" class="text-2xl font-extrabold text-white tracking-tight" aria-label="Accordify Home">Accordify</a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#services" class="text-white/90 hover:text-white transition-colors">Services</a>
+          <a href="./pricing.html" class="text-white/90 hover:text-white transition-colors">Pricing</a>
+          <a href="#about" class="text-white/90 hover:text-white transition-colors">About</a>
+          <a href="#testimonials" class="text-white/90 hover:text-white transition-colors">Testimonials</a>
+          <a href="#agreement-generator" class="text-white/90 hover:text-white transition-colors">Generator</a>
         </div>
-        <div class="hidden items-center space-x-8">
-            <a href="#services" class="text-white hover:text-primary transition-colors">Services</a>
-            <a href="#about" class="text-white hover:text-primary transition-colors">About</a>
-            <a href="#testimonials" class="text-white hover:text-primary transition-colors">Testimonials</a>
-            <a href="#agreement-generator" class="text-white hover:text-primary transition-colors">Agreement Generator</a>
+        <div class="hidden md:flex items-center gap-3">
+          <a href="./pricing.html" class="text-white/90 hover:text-white underline underline-offset-4">See pricing</a>
+          <a href="#contact" class="bg-primary text-white px-5 py-2 rounded-md hover:bg-opacity-90 transition-colors">Get Started</a>
         </div>
-        <div class="hidden md:block">
-            <a href="#contact" class="bg-primary text-white px-6 py-2 rounded-md hover:bg-opacity-90 transition-colors">Get Started</a>
+        <button id="menuBtn" class="md:hidden text-white p-2 rounded hover:bg-white/10" aria-label="Toggle menu" aria-controls="mobileMenu" aria-expanded="false">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+      <div id="mobileMenu" class="md:hidden hidden px-2 pt-3 pb-4">
+        <div class="flex flex-col gap-2">
+          <a href="#services" class="block text-white/90 hover:text-white px-3 py-2 rounded">Services</a>
+          <a href="./pricing.html" class="block text-white/90 hover:text-white px-3 py-2 rounded">Pricing</a>
+          <a href="#about" class="block text-white/90 hover:text-white px-3 py-2 rounded">About</a>
+          <a href="#testimonials" class="block text-white/90 hover:text-white px-3 py-2 rounded">Testimonials</a>
+          <a href="#agreement-generator" class="block text-white/90 hover:text-white px-3 py-2 rounded">Generator</a>
+          <a href="#contact" class="block bg-primary text-white mt-2 px-3 py-2 rounded">Get Started</a>
         </div>
+      </div>
     </nav>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="hero-gradient text-white py-20 md:py-32 px-6 md:px-12">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Legal guidance for startup founders</h1>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">Simplifying legal complexities so you can focus on building your business</p>
-            </div>
-            
-            <div class="bg-black bg-opacity-50 backdrop-blur-sm rounded-xl p-8 md:p-12 max-w-4xl mx-auto">
-                <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Helping Students Create Startup Agreements</h2>
-                <p class="text-gray-300 mb-6">Our platform provides easy-to-use legal templates specifically designed for student entrepreneurs and early-stage startups. Create professional agreements in minutes, not days.</p>
-                <a href="#agreement-generator" class="inline-block bg-primary text-white px-8 py-3 rounded-md hover:bg-opacity-90 transition-colors">Create Your Agreement</a>
-            </div>
+  <main id="main">
+    <section class="hero-gradient text-white pt-18 pb-20 md:py-24 px-6 md:px-12">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="inline-flex items-center gap-2 text-sm text-white/70 border border-white/10 rounded-full px-3 py-1 mb-4">
+            <i class="fa fa-shield"></i> Trusted by student founders
+          </span>
+          <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">Professional startup agreements—built in minutes</h1>
+          <p class="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mt-4">Accordify gives you clear, customizable legal templates and guidance so you can move fast—without cutting corners.</p>
+          <div class="mt-8 flex items-center justify-center gap-4">
+            <a href="#agreement-generator" class="bg-primary text-white px-7 py-3 rounded-md font-semibold hover:bg-opacity-90">Create an Agreement</a>
+            <a href="./pricing.html" class="text-white/90 hover:text-white underline underline-offset-4">See Pricing</a>
+          </div>
         </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 opacity-90" aria-label="Trust metrics">
+          <div class="bg-white/5 rounded-lg p-4 text-center">
+            <div class="text-2xl font-bold">4.8/5</div>
+            <div class="text-sm text-white/70">Client Rating</div>
+          </div>
+          <div class="bg-white/5 rounded-lg p-4 text-center">
+            <div class="text-2xl font-bold">200+</div>
+            <div class="text-sm text-white/70">Agreements Generated</div>
+          </div>
+          <div class="bg-white/5 rounded-lg p-4 text-center">
+            <div class="text-2xl font-bold">24h</div>
+            <div class="text-sm text-white/70">Turnaround</div>
+          </div>
+          <div class="bg-white/5 rounded-lg p-4 text-center">
+            <div class="text-2xl font-bold">HKU</div>
+            <div class="text-sm text-white/70">Student-led Initiative</div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Section Transition -->
-    <div class="section-transition"></div>
-
-    <!-- Services Section -->
-    <section id="services" class="py-20 px-6 md:px-12 bg-white">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl md-4xl font-bold text-center mb-16">Our Services</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service Card 1 -->
-                <div class="card-hover bg-white rounded-lg overflow-hidden shadow-md">
-                    <div class="h-48 bg-gray-200 flex items-center justify-center">
-                        <img src="https://picsum.photos/id/180/600/400" alt="Legal Document Preparation" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">Legal Document Preparation</h3>
-                        <p class="text-gray-600 mb-4">Professional legal documents tailored to your startup's specific needs, including founder agreements, investment contracts, and employee agreements.</p>
-                        <a href="#" class="text-primary font-medium hover:underline">Learn more →</a>
-                    </div>
-                </div>
-                
-                <!-- Service Card 2 -->
-                <div class="card-hover bg-white rounded-lg overflow-hidden shadow-md">
-                    <div class="h-48 bg-gray-200 flex items-center justify-center">
-                        <img src="https://picsum.photos/id/48/600/400" alt="Legal Consultation" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">Legal Consultation</h3>
-                        <p class="text-gray-600 mb-4">Expert advice from experienced startup attorneys to help you navigate legal challenges and make informed decisions for your business.</p>
-                        <a href="#" class="text-primary font-medium hover:underline">Learn more →</a>
-                    </div>
-                </div>
-                
-                <!-- Service Card 3 -->
-                <div class="card-hover bg-white rounded-lg overflow-overflow-hidden shadow-md">
-                    <div class="h-48 bg-gray-200 flex items-center justify-center">
-                        <img src="https://picsum.photos/id/20/600/400" alt="Compliance Assistance" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">Compliance Assistance</h3>
-                        <p class="text-gray-600 mb-4">Ensure your startup complies with all relevant laws and regulations, avoiding costly mistakes and legal issues down the road.</p>
-                        <a href="#" class="text-primary font-medium hover:underline">Learn more →</a>
-                    </div>
-                </div>
-            </div>
+    <section id="services" class="py-16 md:py-20 px-6 md:px-12 bg-white">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-14">Our Services</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <article class="card-hover bg-white rounded-xl overflow-hidden shadow-card border border-gray-100">
+            <a href="./services/legal-document-preparation.html" class="block" aria-label="Legal Document Preparation">
+              <div class="h-48 bg-gray-200">
+                <img loading="lazy" src="https://picsum.photos/id/180/800/500" alt="Legal document preparation" class="w-full h-full object-cover"/>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">Legal Document Preparation</h3>
+                <p class="text-gray-600 mb-4">Founders agreements, IP assignment, contractor and employee agreements—precisely tailored to your inputs.</p>
+                <span class="text-primary font-medium hover:underline">Learn more →</span>
+              </div>
+            </a>
+          </article>
+          <article class="card-hover bg-white rounded-xl overflow-hidden shadow-card border border-gray-100">
+            <a href="./services/legal-consultation.html" class="block" aria-label="Legal Consultation">
+              <div class="h-48 bg-gray-200">
+                <img loading="lazy" src="https://picsum.photos/id/48/800/500" alt="Legal consultation" class="w-full h-full object-cover"/>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">Legal Consultation</h3>
+                <p class="text-gray-600 mb-4">Scenario-based guidance from startup-savvy mentors and advisors to help you avoid common pitfalls.</p>
+                <span class="text-primary font-medium hover:underline">Learn more →</span>
+              </div>
+            </a>
+          </article>
+          <article class="card-hover bg-white rounded-xl overflow-hidden shadow-card border border-gray-100">
+            <a href="./services/compliance-assistance.html" class="block" aria-label="Compliance Assistance">
+              <div class="h-48 bg-gray-200">
+                <img loading="lazy" src="https://picsum.photos/id/20/800/500" alt="Compliance assistance" class="w-full h-full object-cover"/>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">Compliance Assistance</h3>
+                <p class="text-gray-600 mb-4">Practical checklists and guidance so your startup stays aligned with relevant regulations from day one.</p>
+                <span class="text-primary font-medium hover:underline">Learn more →</span>
+              </div>
+            </a>
+          </article>
         </div>
+      </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 px-6 md:px-12 bg-gray-light">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="fade-in">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6">About StartupLegal</h2>
-                    <p class="text-gray-700 mb-4">StartupLegal was founded with a mission to make legal services accessible and affordable for student entrepreneurs and early-stage startups.</p>
-                    <p class="text-gray-700 mb-4">We understand that legal work can be intimidating and expensive, especially for those just starting out. That's why we've created a platform that simplifies the process, providing you with the legal tools and guidance you need to protect your business.</p>
-                    <p class="text-gray-700 mb-6">Our team of experienced attorneys and legal professionals have worked with hundreds of startups, helping them navigate the legal complexities of building and scaling a business.</p>
-                    <a href="#contact" class="inline-block bg-primary text-white px-8 py-3 rounded-md hover:bg-opacity-90 transition-colors">Contact Us</a>
-                </div>
-                <div class="fade-in">
-                    <img src="https://picsum.photos/id/1071/800/600" alt="About StartupLegal" class="rounded-lg shadow-xl w-full h-auto">
-                </div>
-            </div>
+    <section id="about" class="py-16 md:py-20 px-6 md:px-12 bg-gray-light">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="fade-in">
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-6">Why Accordify</h2>
+          <ul class="space-y-4 text-gray-700">
+            <li><strong>Clarity over jargon:</strong> plain-English documents with essential legal protections.</li>
+            <li><strong>Speed with confidence:</strong> guided inputs, smart defaults, and editable outputs.</li>
+            <li><strong>Built for students & early teams:</strong> pragmatic patterns validated across 200+ cases.</li>
+          </ul>
+          <a href="#agreement-generator" class="inline-block mt-6 bg-primary text-white px-7 py-3 rounded-md font-semibold hover:bg-opacity-90">Try the Generator</a>
         </div>
+        <div class="fade-in">
+          <img loading="lazy" src="https://picsum.photos/id/1071/900/650" alt="Founders collaborating" class="rounded-xl shadow-card w-full h-auto"/>
+        </div>
+      </div>
     </section>
 
-    <!-- Section Transition to Dark -->
-    <div class="section-transition-dark"></div>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-20 px-6 md:px-12 hero-gradient">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-16">What Our Clients Say</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 text-white">
-                    <div class="flex items-center mb-4">
-                        <div class="text-yellow-400 flex">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <span class="ml-2 text-sm">Exceptional</span>
-                    </div>
-                    <p class="mb-6">"StartupLegal made creating our founder agreement a breeze. As student entrepreneurs with limited legal knowledge, their platform guided us through the process step by step."</p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 bg-gray-300 rounded-full overflow-hidden mr-4">
-                            <img src="https://picsum.photos/id/1005/100/100" alt="User" class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="font-bold">Sarah Johnson</h4>
-                            <p class="text-sm text-gray-300">Co-founder, TechStart Inc.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 text-white">
-                    <div class="flex items-center mb-4">
-                        <div class="text-yellow-400 flex">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <span class="ml-2 text-sm">Highly Recommended</span>
-                    </div>
-                    <p class="mb-6">"The legal guidance we received from StartupLegal was invaluable. Their team took the time to understand our business and provided tailored advice that helped us avoid potential pitfalls."</p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 bg-gray-300 rounded-full overflow-hidden mr-4">
-                            <img src="https://picsum.photos/id/1012/100/100" alt="User" class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="font-bold">Michael Chen</h4>
-                            <p class="text-sm text-gray-300">Founder, InnovateTech</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 3 -->
-                <div class="testimonial-card bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 text-white">
-                    <div class="flex items-center mb-4">
-                        <div class="text-yellow-400 flex">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <span class="ml-2 text-sm">Five Stars</span>
-                    </div>
-                    <p class="mb-6">"As a first-time founder, I was overwhelmed by the legal aspects of starting a business. StartupLegal's platform simplified everything and gave me the confidence to move forward."</p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 bg-gray-300 rounded-full overflow-hidden mr-4">
-                            <img src="https://picsum.photos/id/1027/100/100" alt="User" class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="font-bold">Emily Rodriguez</h4>
-                            <p class="text-sm text-gray-300">Founder, GreenSolutions</p>
-                        </div>
-                    </div>
-                </div>
+    <section id="testimonials" class="py-16 md:py-20 px-6 md:px-12 bg-white">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-14">What Founders Say</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <figure class="bg-white rounded-xl p-6 border border-gray-100 shadow-card">
+            <div class="text-yellow-500 mb-3" aria-label="5 out of 5 stars">
+              <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
             </div>
+            <blockquote class="text-gray-800">“Accordify let us finalize a founders agreement in one afternoon. The templates are clear and customizable.”</blockquote>
+            <figcaption class="mt-4 text-sm text-gray-500">Sarah J., Co-founder</figcaption>
+          </figure>
+          <figure class="bg-white rounded-xl p-6 border border-gray-100 shadow-card">
+            <div class="text-yellow-500 mb-3" aria-label="5 out of 5 stars">
+              <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+            </div>
+            <blockquote class="text-gray-800">“We avoided several pitfalls thanks to the consultation notes and checklists.”</blockquote>
+            <figcaption class="mt-4 text-sm text-gray-500">Michael C., Founder</figcaption>
+          </figure>
+          <figure class="bg-white rounded-xl p-6 border border-gray-100 shadow-card">
+            <div class="text-yellow-500 mb-3" aria-label="5 out of 5 stars">
+              <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+            </div>
+            <blockquote class="text-gray-800">“Great balance of speed and legal safeguards for early-stage teams.”</blockquote>
+            <figcaption class="mt-4 text-sm text-gray-500">Emily R., Co-founder</figcaption>
+          </figure>
         </div>
+      </div>
     </section>
 
-    <!-- Section Transition to Light -->
-    <div class="section-transition"></div>
+    <section id="agreement-generator" class="py-16 md:py-20 px-6 md:px-12 bg-gray-light">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-14">Founders Agreement Generator</h2>
 
-    <!-- AI Insights Section -->
-    <section class="py-20 px-6 md:px-12 bg-white">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="fade-in">
-                    <img src="https://picsum.photos/id/1/800/600" alt="Legal AI Insights" class="rounded-lg shadow-xl w-full h-auto">
+        <div class="bg-white border border-gray-200 rounded-xl p-6 md:p-8 shadow-card">
+          <div id="app" class="max-w-7xl mx-auto">
+            <header class="mb-8">
+              <h3 class="text-2xl md:text-3xl font-bold text-primary mb-2">Accordify</h3>
+              <p class="text-gray-600">Build your startup's founders agreement with confidence</p>
+            </header>
+
+            <div id="mainView" class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <aside class="lg:col-span-1">
+                <div class="bg-gray-50 rounded-lg p-6 lg:sticky lg:top-4">
+                  <h4 class="text-xl font-semibold mb-2">Founders Agreement</h4>
+                  <p class="text-gray-600 mb-4">Define equity, roles, IP, and vesting with clarity.</p>
+                  <button onclick="showTemplateDetails()" class="w-full bg-primary text-white py-3 px-6 rounded-lg font-semibold hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl">Start Creating</button>
                 </div>
-                <div class="fade-in">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Legal AI Insights</h2>
-                    <p class="text-gray-700 mb-4">Our proprietary AI technology analyzes thousands of legal documents and startup cases to provide you with actionable insights and recommendations.</p>
-                    <p class="text-gray-700 mb-4">Stay ahead of potential legal issues with our AI-powered risk assessment tools, which identify areas of concern in your agreements and provide suggestions for improvement.</p>
-                    <p class="text-gray-700 mb-6">Access our growing library of legal resources, including articles, guides, and case studies, to help you make informed decisions for your startup.</p>
-                    <a href="#" class="inline-block bg-primary text-white px-8 py-3 rounded-md hover:bg-opacity-90 transition-colors">Explore Insights</a>
+              </aside>
+
+              <section class="lg:col-span-2">
+                <div id="templateDetails" class="bg-gray-50 rounded-lg p-6">
+                  <div class="text-center text-gray-500 py-12">
+                    <svg class="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                    <p class="text-lg">Click “Start Creating” to begin</p>
+                  </div>
                 </div>
+              </section>
             </div>
-        </div>
-    </section>
 
-    <!-- Agreement Generator Section -->
-    <section id="agreement-generator" class="py-20 px-6 md:px-12 bg-gray-light">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Founders Agreement Generator</h2>
-            
-            <div class="embedded-generator p-6 md:p-8">
-                <!-- This is where the original agreement generator code will be inserted -->
-                <div id="app" class="max-w-7xl mx-auto">
-                    <!-- Header -->
-                    <header class="mb-8">
-                        <h1 class="text-4xl font-bold text-primary mb-2">StartupLegal</h1>
-                        <p class="text-lg text-gray-600 dark:text-gray-400">Build your startup's founders agreement with confidence</p>
-                    </header>
-
-                    <!-- Main Content -->
-                    <div id="mainView" class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                        <!-- Template Selection -->
-                        <div class="lg:col-span-1">
-                            <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-6 sticky top-4">
-                                <h2 class="text-2xl font-semibold mb-4">Founders Agreement</h2>
-                                <p class="text-gray-600 dark:text-gray-400 mb-4">Essential agreement for co-founders defining equity split and responsibilities</p>
-                                <button onclick="showTemplateDetails()" class="w-full bg-primary text-white py-3 px-6 rounded-lg font-semibold hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl">
-                                    Start Creating
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Template Details & Form -->
-                        <div class="lg:col-span-2">
-                            <div id="templateDetails" class="bg-gray-50 dark:bg-gray-900 rounded-lg p-6">
-                                <div class="text-center text-gray-500 dark:text-gray-400 py-12">
-                                    <svg class="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                                    </svg>
-                                    <p class="text-lg">Click "Start Creating" to begin</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Document Preview Modal -->
-                    <div id="previewModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 overflow-y-auto">
-                        <div class="min-h-screen px-4 flex items-center justify-center">
-                            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-4xl w-full my-8">
-                                <div class="p-6 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center no-print">
-                                    <h3 class="text-2xl font-semibold">Document Preview</h3>
-                                    <button onclick="closePreview()" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
-                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                                        </svg>
-                                    </button>
-                                </div>
-                                <div id="previewContent" class="p-8 max-h-[70vh] overflow-y-auto"></div>
-                                <div class="p-6 border-t border-gray-200 dark:border-gray-700 flex justify-end space-x-3 no-print">
-                                    <button onclick="closePreview()" class="px-6 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors">Close</button>
-                                    <button onclick="downloadDocument()" class="px-6 py-2 bg-primary text-white hover:bg-opacity-90 rounded-lg transition-colors">Download as HTML</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div id="previewModal" class="hidden fixed inset-0 bg-black/50 z-50 overflow-y-auto" role="dialog" aria-modal="true" aria-label="Document Preview">
+              <div class="min-h-screen px-4 flex items-center justify-center">
+                <div class="bg-white rounded-lg shadow-xl max-w-4xl w-full my-8">
+                  <div class="p-6 border-b border-gray-200 flex justify-between items-center no-print">
+                    <h3 class="text-2xl font-semibold">Document Preview</h3>
+                    <button type="button" onclick="closePreview()" class="text-gray-500 hover:text-gray-700" aria-label="Close preview">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                    </button>
+                  </div>
+                  <div id="previewContent" class="p-8 max-h-[70vh] overflow-y-auto"></div>
+                  <div class="p-6 border-t border-gray-200 flex justify-end gap-3 no-print">
+                    <button type="button" onclick="closePreview()" class="px-6 py-2 text-gray-700 hover:bg-gray-100 rounded-lg">Close</button>
+                    <button type="button" onclick="downloadDocument()" class="px-6 py-2 bg-primary text-white hover:bg-opacity-90 rounded-lg">Download as HTML</button>
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
-    </section>
+          </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 px-6 md:px-12 bg-white">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Get In Touch</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div class="fade-in">
-                    <form class="space-y-6">
-                        <div>
-                            <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
-                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
-                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
-                        </div>
-                        <div>
-                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
-                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-primary text-white py-3 px-6 rounded-md hover:bg-opacity-90 transition-colors">Send Message</button>
-                    </form>
-                </div>
-                <div class="fade-in">
-                    <div class="bg-gray-light p-8 rounded-lg h-full">
-                        <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
-                        <div class="space-y-6">
-                            <div class="flex items-start">
-                                <div class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
-                                    <i class="fa fa-map-marker text-primary"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold mb-1">Address</h4>
-                                    <p class="text-gray-600">123 Innovation Drive, Startup City, SC 10101</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
-                                    <i class="fa fa-envelope text-primary"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold mb-1">Email</h4>
-                                    <p class="text-gray-600">info@startuplegal.com</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
-                                    <i class="fa fa-phone text-primary"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold mb-1">Phone</h4>
-                                    <p class="text-gray-600">(555) 123-4567</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-12">
-                            <h4 class="font-bold mb-4">Follow Us</h4>
-                            <div class="flex space-x-4">
-                                <a href="#" class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition-colors">
-                                    <i class="fa fa-twitter text-primary"></i>
-                                </a>
-                                <a href="#" class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition-colors">
-                                    <i class="fa fa-twitter text-primary"></i>
-                                </a>
-                                <a href="#" class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition-colors">
-                                    <i class="fa fa-linkedin text-primary"></i>
-                                </a>
-                                <a href="#" class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition-colors">
-                                    <i class="fa fa-instagram text-primary"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-12 px-6 md:px-12">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">StartupLegal</h3>
-                    <p class="text-gray-400 mb-4">Simplifying legal complexities for startups and entrepreneurs.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fa fa-linkedin"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fa fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Services</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Document Preparation</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Legal Consultation</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Compliance Assistance</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Agreement Generator</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Resources</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Guides</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Company</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
-                <p>&copy; 2025 StartupLegal. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Original Agreement Generator Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script>
-        // Database of share agreement templates
-        const templates = [
-            {
+          <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+          <script>
+            const templates = [
+              {
                 id: 'founders-agreement',
                 name: 'Founders Agreement',
                 description: 'Essential agreement for co-founders defining equity split and responsibilities',
                 category: 'Founders',
-                explanation: `### What is a Founders Agreement?
+                explanation: `### Overview
+A Founders Agreement outlines the relationship between co-founders of a startup.
 
-A Founders Agreement is a legal document that outlines the relationship between co-founders of a startup. It's one of the most important documents you'll create when starting a business with others.
-
-### Why You Need This
-
-- **Prevents Future Conflicts**: Clearly defines roles, responsibilities, and equity distribution
-- **Protects Everyone**: Establishes what happens if a founder leaves or the company is sold
-- **Shows Professionalism**: Investors want to see that founders have formalized their relationship
-- **Vesting Protection**: Ensures founders earn their equity over time
-
-### Key Terms Explained
-
-- **Equity Split**: The percentage of company ownership each founder receives
-- **Vesting Schedule**: Timeline over which founders earn their equity (typically 4 years with 1-year cliff)
-- **Cliff Period**: Time before any equity is earned (usually 1 year)
-- **IP Assignment**: All work created belongs to the company, not individual founders
-- **Confidentiality**: Protection of sensitive company information`,
+**Why it matters**
+- Avoids conflicts via clear roles & equity
+- Protects IP and confidentiality
+- Introduces vesting & cliff
+- Signals professionalism to investors
+                `,
                 fields: [
-                    { name: 'companyName', label: 'Company Name', type: 'text', required: true },
-                    { name: 'founder1Name', label: 'Founder 1 Full Name', type: 'text', required: true },
-                    { name: 'founder1Equity', label: 'Founder 1 Equity %', type: 'number', required: true, min: 0, max: 100 },
-                    { name: 'founder2Name', label: 'Founder 2 Full Name', type: 'text', required: true },
-                    { name: 'founder2Equity', label: 'Founder 2 Equity %', type: 'number', required: true, min: 0, max: 100 },
-                    { name: 'vestingYears', label: 'Vesting Period (years)', type: 'number', required: true, value: 4 },
-                    { name: 'cliffMonths', label: 'Cliff Period (months)', type: 'number', required: true, value: 12 },
-                    { name: 'state', label: 'State/Jurisdiction', type: 'text', required: true }
+                  { name: 'companyName', label: 'Company Name', type: 'text', required: true },
+                  { name: 'founder1Name', label: 'Founder 1 Full Name', type: 'text', required: true },
+                  { name: 'founder1Equity', label: 'Founder 1 Equity %', type: 'number', required: true, min: 0, max: 100 },
+                  { name: 'founder2Name', label: 'Founder 2 Full Name', type: 'text', required: true },
+                  { name: 'founder2Equity', label: 'Founder 2 Equity %', type: 'number', required: true, min: 0, max: 100 },
+                  { name: 'vestingYears', label: 'Vesting Period (years)', type: 'number', required: true, value: 4 },
+                  { name: 'cliffMonths', label: 'Cliff Period (months)', type: 'number', required: true, value: 12 },
+                  { name: 'state', label: 'State/Jurisdiction', type: 'text', required: true }
                 ],
                 template: (data) => `
-                    <div class="space-y-6">
-                        <div class="text-center">
-                            <h1 class="text-3xl font-bold mb-2">FOUNDERS AGREEMENT</h1>
-                            <p class="text-lg">${data.companyName}</p>
-                            <p class="text-sm text-gray-600 dark:text-gray-400">Effective Date: ${new Date().toLocaleDateString()}</p>
-                        </div>
-
-                        <div class="border-t border-gray-300 dark:border-gray-600 pt-6">
-                            <h2 class="text-xl font-semibold mb-4">1. PARTIES</h2>
-                            <p class="mb-2">This Founders Agreement ("Agreement") is entered into by and between:</p>
-                            <ul class="list-disc ml-6 space-y-1">
-                                <li>${data.founder1Name} ("Founder 1")</li>
-                                <li>${data.founder2Name} ("Founder 2")</li>
-                            </ul>
-                            <p class="mt-2">Collectively referred to as the "Founders" of ${data.companyName} ("Company").</p>
-                        </div>
-
-                        <div>
-                            <h2 class="text-xl font-semibold mb-4">2. EQUITY ALLOCATION</h2>
-                            <p class="mb-2">The Founders agree to the following equity distribution:</p>
-                            <ul class="list-disc ml-6 space-y-1">
-                                <li>${data.founder1Name}: ${data.founder1Equity}% of Company equity</li>
-                                <li>${data.founder2Name}: ${data.founder2Equity}% of Company equity</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h2 class="text-xl font-semibold mb-4">3. VESTING SCHEDULE</h2>
-                            <p class="mb-2">All equity allocated to Founders shall be subject to the following vesting terms:</p>
-                            <ul class="list-disc ml-6 space-y-2">
-                                <li><strong>Vesting Period:</strong> ${data.vestingYears} years from the effective date</li>
-                                <li><strong>Cliff Period:</strong> ${data.cliffMonths} months (no equity vests until this period is complete)</li>
-                                <li><strong>Monthly Vesting:</strong> After the cliff period, equity vests monthly in equal installments</li>
-                                <li><strong>Termination:</strong> Unvested equity is forfeited if a Founder leaves the Company</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h2 class="text-xl font-semibold mb-4">4. ROLES AND RESPONSIBILITIES</h2>
-                            <p class="mb-2">Each Founder agrees to:</p>
-                            <ul class="list-disc ml-6 space-y-1">
-                                <li>Devote sufficient time and effort to the Company's success</li>
-                                <li>Act in the best interests of the Company</li>
-                                <li>Maintain confidentiality of proprietary information</li>
-                                <li>Not compete with the Company during their tenure</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h2 class="text-xl font-semibold mb-4">5. INTELLECTUAL PROPERTY</h2>
-                            <p>All intellectual property, inventions, designs, and work product created by any Founder in connection with the Company shall be the sole and exclusive property of the Company. Each Founder hereby assigns all rights, title, and interest in such intellectual property to the Company.</p>
-                        </div>
-
-                        <div>
-                            <h2 class="text-xl font-semibold mb-4">6. DECISION MAKING</h2>
-                            <p class="mb-2">Major decisions requiring unanimous Founder approval include:</p>
-                            <ul class="list-disc ml-6 space-y-1">
-                                <li>Sale or merger of the Company</li>
-                                <li>Issuance of additional equity</li>
-                                <li>Taking on debt over a material threshold</li>
-                                <li>Changes to this Founders Agreement</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h2 class="text-xl font-semibold mb-4">7. CONFIDENTIALITY</h2>
-                            <p>Each Founder agrees to maintain strict confidentiality of all proprietary and confidential information related to the Company, both during their tenure and after departure.</p>
-                        </div>
-
-                        <div>
-                            <h2 class="text-xl font-semibold mb-4">8. DISPUTE RESOLUTION</h2>
-                            <p>Any disputes arising from this Agreement shall be resolved through mediation, and if necessary, binding arbitration in accordance with the laws of ${data.state}.</p>
-                        </div>
-
-                        <div class="border-t border-gray-300 dark:border-gray-600 pt-6 mt-8">
-                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-8">IN WITNESS WHEREOF, the Founders have executed this Agreement as of the date first written above.</p>
-
-                            <div class="grid grid-cols-2 gap-8 mt-8">
-                                <div>
-                                    <div class="border-t border-gray-400 pt-2">
-                                        <p class="font-semibold">${data.founder1Name}</p>
-                                        <p class="text-sm text-gray-600 dark:text-gray-400">Founder 1</p>
-                                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Date: _______________</p>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="border-t border-gray-400 pt-2">
-                                        <p class="font-semibold">${data.founder2Name}</p>
-                                        <p class="text-sm text-gray-600 dark:text-gray-400">Founder 2</p>
-                                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Date: _______________</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4 mt-6">
-                            <p class="text-sm font-semibold text-yellow-800 dark:text-yellow-200 mb-1">⚠️ Legal Disclaimer</p>
-                            <p class="text-sm text-yellow-700 dark:text-yellow-300">This is a simplified template for educational purposes. Always consult with a qualified attorney before signing any legal agreement.</p>
-                        </div>
+                  <div class="space-y-6">
+                    <div class="text-center">
+                      <h1 class="text-3xl font-bold mb-2">FOUNDERS AGREEMENT</h1>
+                      <p class="text-lg>${data.companyName}</p>
+                      <p class="text-sm text-gray-600">Effective Date: ${new Date().toLocaleDateString()}</p>
                     </div>
+                    <div class="border-t border-gray-300 pt-6">
+                      <h2 class="text-xl font-semibold mb-4">1. PARTIES</h2>
+                      <ul class="list-disc ml-6 space-y-1">
+                        <li>${data.founder1Name} ("Founder 1")</li>
+                        <li>${data.founder2Name} ("Founder 2")</li>
+                      </ul>
+                      <p class="mt-2">Collectively, the "Founders" of ${data.companyName} ("Company").</p>
+                    </div>
+                    <div>
+                      <h2 class="text-xl font-semibold mb-4">2. EQUITY ALLOCATION</h2>
+                      <ul class="list-disc ml-6 space-y-1">
+                        <li>${data.founder1Name}: ${data.founder1Equity}%</li>
+                        <li>${data.founder2Name}: ${data.founder2Equity}%</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h2 class="text-xl font-semibold mb-4">3. VESTING SCHEDULE</h2>
+                      <ul class="list-disc ml-6 space-y-2">
+                        <li><strong>Vesting:</strong> ${data.vestingYears} years</li>
+                        <li><strong>Cliff:</strong> ${data.cliffMonths} months</li>
+                        <li><strong>Monthly vesting</strong> after cliff</li>
+                        <li><strong>Termination:</strong> Unvested equity is forfeited</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h2 class="text-xl font-semibold mb-4">4. ROLES AND RESPONSIBILITIES</h2>
+                      <ul class="list-disc ml-6 space-y-1">
+                        <li>Contribute time and effort</li>
+                        <li>Act in the Company’s best interests</li>
+                        <li>Maintain confidentiality</li>
+                        <li>No competition during tenure</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h2 class="text-xl font-semibold mb-4">5. INTELLECTUAL PROPERTY</h2>
+                      <p>All related IP is assigned to the Company.</p>
+                    </div>
+                    <div>
+                      <h2 class="text-xl font-semibold mb-4">6. DECISION MAKING</h2>
+                      <p>Unanimous approval required for: sale/merger, new equity, material debt, changes to this Agreement.</p>
+                    </div>
+                    <div>
+                      <h2 class="text-xl font-semibold mb-4">7. CONFIDENTIALITY</h2>
+                      <p>Maintain strict confidentiality during and after engagement.</p>
+                    </div>
+                    <div>
+                      <h2 class="text-xl font-semibold mb-4">8. DISPUTE RESOLUTION</h2>
+                      <p>Mediation then binding arbitration under the laws of ${data.state}.</p>
+                    </div>
+                    <div class="border-t border-gray-300 pt-6 mt-8">
+                      <p class="text-sm text-gray-600 mb-8">IN WITNESS WHEREOF, the Founders execute as of the date above.</p>
+                      <div class="grid grid-cols-2 gap-8">
+                        <div>
+                          <div class="border-t border-gray-400 pt-2">
+                            <p class="font-semibold">${data.founder1Name}</p>
+                            <p class="text-sm text-gray-600">Founder 1</p>
+                            <p class="text-sm text-gray-600 mt-2">Date: _______________</p>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="border-t border-gray-400 pt-2">
+                            <p class="font-semibold">${data.founder2Name}</p>
+                            <p class="text-sm text-gray-600">Founder 2</p>
+                            <p class="text-sm text-gray-600 mt-2">Date: _______________</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-6">
+                      <p class="text-sm font-semibold text-yellow-800 mb-1">⚠️ Legal Disclaimer</p>
+                      <p class="text-sm text-yellow-700">Educational template only. Consult a qualified attorney before signing.</p>
+                    </div>
+                  </div>
                 `
-            }
-        ];
+              }
+            ];
 
-        let currentTemplate = templates[0]; // Only one template now
-        let generatedDocument = null;
+            let currentTemplate = templates[0];
+            let generatedDocument = null;
 
-        // Initialize the app
-        function init() {
-            // No need to render template list since we only have one template
-        }
-
-        // Show template details directly since we only have one template
-        function showTemplateDetails() {
-            const container = document.getElementById('templateDetails');
-
-            const html = `
+            function showTemplateDetails(){
+              const container = document.getElementById('templateDetails');
+              const html = `
                 <div>
-                    <div class="mb-6">
-                        <h2 class="text-3xl font-bold mb-2">${currentTemplate.name}</h2>
-                        <p class="text-gray-600 dark:text-gray-400">${currentTemplate.description}</p>
+                  <div class="mb-6">
+                    <h2 class="text-3xl font-bold mb-2">${currentTemplate.name}</h2>
+                    <p class="text-gray-600">${currentTemplate.description}</p>
+                  </div>
+                  <div class="mb-6 bg-white rounded-lg p-6 border border-gray-200">
+                    <h3 class="text-xl font-semibold mb-3">What You Need to Know</h3>
+                    <div class="markdown-content prose max-w-none text-gray-700">
+                      ${marked.parse(currentTemplate.explanation)}
                     </div>
+                  </div>
+                  <div class="bg-white rounded-lg p-6 border border-gray-200">
+                    <h3 class="text-xl font-semibold mb-4">Fill in Your Details</h3>
+                    <form id="templateForm" onsubmit="generateDocument(event)" class="space-y-4">
+                      ${currentTemplate.fields.map(field => `
+                        <div>
+                          <label class="block text-sm font-medium mb-2">${field.label}</label>
+                          <input type="${field.type}" name="${field.name}" ${field.required ? 'required' : ''}
+                                 ${field.min!==undefined ? `min="${field.min}"` : ''} ${field.max!==undefined ? `max="${field.max}"` : ''}
+                                 ${field.step ? `step="${field.step}"` : ''} ${field.value!==undefined ? `value="${field.value}"` : ''}
+                                 class="w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-primary"/>
+                        </div>`).join('')}
+                      <button type="submit" class="w-full bg-primary text-white py-3 px-6 rounded-lg font-semibold hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl">
+                        Generate Agreement
+                      </button>
+                    </form>
+                  </div>
+                </div>`;
+              container.innerHTML = html;
+            }
 
-                    <div class="mb-6 bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
-                        <h3 class="text-xl font-semibold mb-3 flex items-center">
-                            <svg class="w-5 h-5 mr-2 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                            What You Need to Know
-                        </h3>
-                        <div class="markdown-content prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-300">
-                            ${marked.parse(currentTemplate.explanation)}
-                        </div>
-                    </div>
+            function generateDocument(e){
+              e.preventDefault();
+              const form = e.target;
+              const formData = new FormData(form);
+              const data = {};
+              for (const [k,v] of formData.entries()) data[k]=v;
+              generatedDocument = currentTemplate.template(data);
+              showPreview();
+            }
 
-                    <div class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
-                        <h3 class="text-xl font-semibold mb-4">Fill in Your Details</h3>
-                        <form id="templateForm" onsubmit="generateDocument(event)" class="space-y-4">
-                            ${currentTemplate.fields.map(field => {
-                                if (field.type === 'select') {
-                                    return `
-                                        <div>
-                                            <label class="block text-sm font-medium mb-2">${field.label}</label>
-                                            <select
-                                                name="${field.name}"
-                                                required="${field.required}"
-                                                class="w-full px-4 py-2.5 text-base border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary focus:border-transparent"
-                                            >
-                                                ${field.options.map(opt => `<option value="${opt}">${opt}</option>`).join('')}
-                                            </select>
-                                        </div>
-                                    `;
-                                } else {
-                                    return `
-                                        <div>
-                                            <label class="block text-sm font-medium mb-2">${field.label}</label>
-                                            <input
-                                                type="${field.type}"
-                                                name="${field.name}"
-                                                placeholder="${field.placeholder || ''}"
-                                                required="${field.required}"
-                                                min="${field.min !== undefined ? field.min : ''}"
-                                                max="${field.max !== undefined ? field.max : ''}"
-                                                step="${field.step || ''}"
-                                                value="${field.value !== undefined ? field.value : ''}"
-                                                class="w-full px-4 py-2.5 text-base border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary focus:border-transparent"
-                                            />
-                                        </div>
-                                    `;
-                                }
-                            }).join('')}
-                            <button
-                                type="submit"
-                                class="w-full bg-primary text-white py-3 px-6 rounded-lg font-semibold hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl"
-                            >
-                                Generate Agreement
-                            </button>
-                        </form>
-                    </div>
+            function showPreview(){
+              const modal = document.getElementById('previewModal');
+              const content = document.getElementById('previewContent');
+              content.innerHTML = generatedDocument;
+              modal.classList.remove('hidden');
+              document.body.style.overflow='hidden';
+            }
+
+            function closePreview(){
+              document.getElementById('previewModal').classList.add('hidden');
+              document.body.style.overflow='auto';
+            }
+
+            function downloadDocument(){
+              if(!generatedDocument) return;
+              const htmlContent = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+ currentTemplate.name +'</title><script src="https://cdn.tailwindcss.com"><\/script><style>@media print{body{padding:1in}}</style></head><body class="p-8 max-w-4xl mx-auto">'+ generatedDocument +'</body></html>';
+              const blob = new Blob([htmlContent], {type:'text/html'});
+              const url = URL.createObjectURL(blob);
+              const a = document.createElement('a');
+              a.href = url; a.download = currentTemplate.id + '-' + Date.now() + '.html';
+              document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+            }
+
+            window.closePreview = closePreview;
+            window.downloadDocument = downloadDocument;
+            window.showTemplateDetails = showTemplateDetails;
+            window.generateDocument = generateDocument;
+          </script>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-16 md:py-20 px-6 md:px-12 bg-white">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-14">Get In Touch</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div class="fade-in">
+            <form id="contactForm" class="space-y-6" novalidate>
+              <div>
+                <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+                <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"/>
+              </div>
+              <div>
+                <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"/>
+              </div>
+              <div>
+                <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+              </div>
+              <button type="submit" class="w-full bg-primary text-white py-3 px-6 rounded-md hover:bg-opacity-90 transition-colors">Send Message</button>
+            </form>
+          </div>
+          <aside class="fade-in">
+            <div class="bg-gray-light p-8 rounded-lg h-full border border-gray-200">
+              <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+              <div class="space-y-6">
+                <div class="flex items-start">
+                  <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4"><i class="fa fa-map-marker text-primary"></i></div>
+                  <div>
+                    <h4 class="font-bold mb-1">Address</h4>
+                    <p class="text-gray-700">LITE Lab Room 802, Cheng Yu Tung Tower, Centennial Campus, HKU</p>
+                  </div>
                 </div>
-            `;
+                <div class="flex items-start">
+                  <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4"><i class="fa fa-envelope text-primary"></i></div>
+                  <div>
+                    <h4 class="font-bold mb-1">Email</h4>
+                    <p class="text-gray-700"><a href="mailto:jhwang23@connect.hku.hk" class="underline text-primary">jhwang23@connect.hku.hk</a></p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4"><i class="fa fa-phone text-primary"></i></div>
+                  <div>
+                    <h4 class="font-bold mb-1">Contact</h4>
+                    <p class="text-gray-700"><a href="tel:+85262749588" class="underline text-primary">+852-6274-9588</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-10">
+                <h4 class="font-bold mb-4">Follow</h4>
+                <div class="flex space-x-4">
+                  <a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition-colors" aria-label="Twitter">
+                    <i class="fa fa-twitter text-primary"></i>
+                  </a>
+                  <a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition-colors" aria-label="LinkedIn">
+                    <i class="fa fa-linkedin text-primary"></i>
+                  </a>
+                  <a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition-colors" aria-label="Instagram">
+                    <i class="fa fa-instagram text-primary"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
 
-            container.innerHTML = html;
-        }
+  <footer class="bg-dark text-white py-12 px-6 md:px-12" role="contentinfo">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">Accordify</h3>
+          <p class="text-white/70">Professional, student-focused legal tools for early-stage teams.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold mb-4">Services</h3>
+          <ul class="space-y-2">
+            <li><a href="./services/legal-document-preparation.html" class="text-white/70 hover:text-white transition-colors">Document Preparation</a></li>
+            <li><a href="./services/legal-consultation.html" class="text-white/70 hover:text-white transition-colors">Legal Consultation</a></li>
+            <li><a href="./services/compliance-assistance.html" class="text-white/70 hover:text-white transition-colors">Compliance Assistance</a></li>
+            <li><a href="#agreement-generator" class="text-white/70 hover:text-white transition-colors">Agreement Generator</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold mb-4">Resources</h3>
+          <ul class="space-y-2">
+            <li><a href="./pricing.html#faq" class="text-white/70 hover:text-white transition-colors">FAQ</a></li>
+            <li><a href="./pricing.html" class="text-white/70 hover:text-white transition-colors">Pricing</a></li>
+            <li><a href="./privacy.html" class="text-white/70 hover:text-white transition-colors">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold mb-4">Company</h3>
+          <ul class="space-y-2">
+            <li><a href="#about" class="text-white/70 hover:text-white transition-colors">About Us</a></li>
+            <li><a href="#contact" class="text-white/70 hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/10 mt-12 pt-8 text-center text-white/60">
+        <p>&copy; <span id="year"></span> Accordify. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 
-        // Generate document
-        function generateDocument(event) {
-            event.preventDefault();
+  <div id="ctaSticky" class="cta-sticky hidden">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="mb-4"></div>
+      <div class="rounded-2xl border border-gray-200 bg-white shadow-card p-4 md:p-5 flex flex-col md:flex-row items-center justify-between gap-3">
+        <div class="text-center md:text-left">
+          <div class="text-sm text-gray-500">Ready to move fast?</div>
+          <div class="text-lg md:text-xl font-semibold text-gray-900">Book a session to review your agreement and next steps.</div>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="./pricing.html" class="px-4 py-2 rounded-md border border-gray-300 text-gray-700 hover:bg-gray-50">See pricing</a>
+          <a href="#contact" class="px-5 py-2 rounded-md bg-primary text-white hover:bg-opacity-90">Book a session</a>
+          <button id="ctaClose" class="p-2 text-gray-500 hover:text-gray-700" aria-label="Dismiss banner">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-            const form = event.target;
-            const formData = new FormData(form);
-            const data = {};
+  <script>
+    (function(){
+      const btn = document.getElementById('menuBtn');
+      const menu = document.getElementById('mobileMenu');
+      if(!btn || !menu) return;
+      btn.addEventListener('click', ()=>{
+        const open = menu.classList.toggle('hidden') === false;
+        btn.setAttribute('aria-expanded', String(open));
+      });
+    })();
 
-            for (let [key, value] of formData.entries()) {
-                data[key] = value;
-            }
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+      });
+    });
 
-            generatedDocument = currentTemplate.template(data);
-            showPreview();
-        }
-
-        // Show preview modal
-        function showPreview() {
-            const modal = document.getElementById('previewModal');
-            const content = document.getElementById('previewContent');
-
-            content.innerHTML = generatedDocument;
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-
-        // Close preview modal
-        function closePreview() {
-            const modal = document.getElementById('previewModal');
-            modal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Download document
-        function downloadDocument() {
-            if (!generatedDocument) return;
-
-            const title = currentTemplate.name;
-            const templateId = currentTemplate.id;
-            const htmlContent = '<!DOCTYPE html>\n' +
-                '<html lang="en">\n' +
-                '<head>\n' +
-                '    <meta charset="UTF-8">\n' +
-                '    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n' +
-                '    <title>' + title + '</title>\n' +
-                '    <script src="https://cdn.tailwindcss.com"><\/script>\n' +
-                '    <style>\n' +
-                '        @media print {\n' +
-                '            body { padding: 1in; }\n' +
-                '        }\n' +
-                '    </style>\n' +
-                '</head>\n' +
-                '<body class="p-8 max-w-4xl mx-auto">\n' +
-                generatedDocument + '\n' +
-                '</body>\n' +
-                '</html>';
-
-            const blob = new Blob([htmlContent], { type: 'text/html' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = templateId + '-' + Date.now() + '.html';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-        }
-
-        // Initialize on load
-        document.addEventListener('DOMContentLoaded', init);
-    </script>
-
-    <!-- Custom JavaScript -->
-    <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('navbar-fixed');
-            } else {
-                navbar.classList.remove('navbar-fixed');
-            }
+    (function(){
+      const els = document.querySelectorAll('.fade-in');
+      if(!('IntersectionObserver' in window)){ els.forEach(el=>el.classList.add('active')); return; }
+      const io = new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){ entry.target.classList.add('active'); io.unobserve(entry.target); }
         });
+      }, { rootMargin: '0px 0px -100px 0px' });
+      els.forEach(el=>io.observe(el));
+    })();
 
-        // Fade-in animations
-        function checkFadeElements() {
-            const fadeElements = document.querySelectorAll('.fade-in');
-            
-            fadeElements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (elementTop < windowHeight - 100) {
-                    element.classList.add('active');
-                }
-            });
-        }
+    (function(){
+      const form = document.getElementById('contactForm');
+      if(!form) return;
+      form.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        alert('Thank you! We will get back to you soon.');
+        form.reset();
+      });
+    })();
 
-        // Initial check for fade elements
-        window.addEventListener('load', checkFadeElements);
-        window.addEventListener('scroll', checkFadeElements);
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Form submission handler
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! We will get back to you soon.');
-            this.reset();
-        });
-    </script>
+    (function(){
+      const key = 'accordify_cta_dismissed';
+      const bar = document.getElementById('ctaSticky');
+      const btn = document.getElementById('ctaClose');
+      if(!bar) return;
+      if(localStorage.getItem(key) !== '1'){
+        setTimeout(()=>{ bar.classList.remove('hidden'); }, 1200);
+      }
+      btn?.addEventListener('click', ()=>{
+        bar.classList.add('hidden');
+        localStorage.setItem(key, '1');
+      });
+    })();
+  </script>
 </body>
 </html>

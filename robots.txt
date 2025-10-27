@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://junhhwang.github.io/Accordify/sitemap.xml

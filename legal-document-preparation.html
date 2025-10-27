@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Legal Document Preparation — Accordify</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description" content="Founders agreements, IP assignment, contractor and employee documents—prepared with clarity and speed."/>
+  <link rel="icon" href="../favicon.ico"/>
+  <script defer data-domain="junhhwang.github.io" src="https://plausible.io/js/script.js"></script>
+</head>
+<body class="bg-white text-gray-900">
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100">
+    <nav class="px-6 md:px-12 py-3 max-w-6xl mx-auto flex items-center justify-between" aria-label="Breadcrumb">
+      <a href="../index_new.html" class="text-2xl font-extrabold text-gray-900">Accordify</a>
+      <div class="text-sm text-gray-500">
+        <a class="underline" href="../index_new.html">Home</a> / <span>Legal Document Preparation</span>
+      </div>
+      <a href="../index_new.html#contact" class="bg-primary text-white px-4 py-2 rounded-md">Contact</a>
+    </nav>
+  </header>
+
+  <main class="px-6 md:px-12">
+    <section class="max-w-6xl mx-auto py-12 md:py-16">
+      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">Legal Document Preparation</h1>
+      <p class="text-lg text-gray-600 mt-3 max-w-3xl">Precise, plain-English documents tailored to your team’s specifics—ready to share and sign.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+        <div class="bg-white rounded-xl border border-gray-100 p-6 shadow-card">
+          <h2 class="text-xl font-bold mb-2">Founders Agreement</h2>
+          <p class="text-gray-600">Equity, vesting, roles, IP, confidentiality, dispute resolution.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-gray-100 p-6 shadow-card">
+          <h2 class="text-xl font-bold mb-2">IP Assignment</h2>
+          <p class="text-gray-600">Ensure all work product and inventions are owned by the company.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-gray-100 p-6 shadow-card">
+          <h2 class="text-xl font-bold mb-2">Contractor/Employee</h2>
+          <p class="text-gray-600">Offer letters, confidentiality, and contractor scopes with deliverables.</p>
+        </div>
+      </div>
+
+      <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-gray-light rounded-xl p-8 border border-gray-200">
+          <h3 class="text-2xl font-bold mb-3">How it works</h3>
+          <ol class="list-decimal ml-5 text-gray-700 space-y-2">
+            <li>Pick a template and answer guided prompts.</li>
+            <li>Review the preview for accuracy and tone.</li>
+            <li>Export to HTML/PDF and share with co-founders.</li>
+          </ol>
+        </div>
+        <div class="bg-white rounded-xl p-8 border border-gray-100 shadow-card">
+          <h3 class="text-2xl font-bold mb-3">What you get</h3>
+          <ul class="list-disc ml-5 text-gray-700 space-y-2">
+            <li>Clean, consistent formatting</li>
+            <li>Risk-aware defaults (vesting/cliff/IP)</li>
+            <li>Editable, reusable output</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 flex items-center gap-3">
+        <a href="../index_new.html#agreement-generator" class="bg-primary text-white px-6 py-3 rounded-md font-semibold">Generate a document</a>
+        <a href="../pricing.html" class="text-gray-700 underline underline-offset-4">See pricing</a>
+      </div>
+    </section>
+  </main>
+
+  <div id="ctaSticky" class="fixed left-0 right-0 bottom-0 z-50">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="rounded-2xl border border-gray-200 bg-white shadow-card p-4 md:p-5 flex flex-col md:flex-row items-center justify-between gap-3">
+        <div class="text-center md:text-left">
+          <div class="text-sm text-gray-500">Need help picking templates?</div>
+          <div class="text-lg md:text-xl font-semibold text-gray-900">Book a session and we’ll guide you.</div>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="../index_new.html#contact" class="px-5 py-2 rounded-md bg-primary text-white hover:bg-opacity-90">Book now</a>
+          <button id="ctaClose" class="p-2 text-gray-500 hover:text-gray-700" aria-label="Dismiss banner">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white py-8">
+    <div class="max-w-6xl mx-auto px-6 md:px-12 text-center text-white/70">
+      © <span id="y1"></span> Accordify — Legal Document Preparation
+    </div>
+  </footer>
+  <script>
+    document.getElementById('y1').textContent=new Date().getFullYear();
+    (function(){ const key='cta_docprep'; const bar=document.getElementById('ctaSticky'); const btn=document.getElementById('ctaClose'); if(localStorage.getItem(key)==='1') bar.style.display='none'; btn?.addEventListener('click',()=>{ bar.style.display='none'; localStorage.setItem(key,'1'); }); })();
+  </script>
+</body>
+</html>

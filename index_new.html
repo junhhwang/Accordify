@@ -219,14 +219,14 @@
               <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
             </div>
             <blockquote class="text-gray-800">“We avoided several pitfalls thanks to the consultation notes and checklists.”</blockquote>
-            <figcaption class="mt-4 text-sm text-gray-500">Jun H., Co-founder</figcaption>
+            <figcaption class="mt-4 text-sm text-gray-500">Jun H., Founder</figcaption>
           </figure>
           <figure class="bg-white rounded-xl p-6 border border-gray-100 shadow-card">
             <div class="text-yellow-500 mb-3" aria-label="5 out of 5 stars">
               <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
             </div>
             <blockquote class="text-gray-800">“Great balance of speed and legal safeguards for early-stage teams.”</blockquote>
-            <figcaption class="mt-4 text-sm text-gray-500">Emma W., Co-founder</figcaption>
+            <figcaption class="mt-4 text-sm text-gray-500">Emma W., Founder</figcaption>
           </figure>
         </div>
       </div>
@@ -302,97 +302,131 @@ A Founders Agreement outlines the relationship between co-founders of a startup.
 <div class="space-y-6"> Nothing in this product or the website is intended to be nor should be construed as legal advice. This is an educational project created by students. Please consult your lawyer for legal advice.
                 `,
                 fields: [
-                  { name: 'companyName', label: 'Company Name', type: 'text', required: true },
-                  { name: 'founder1Name', label: 'Founder 1 Full Name', type: 'text', required: true },
-                  { name: 'founder1Equity', label: 'Founder 1 Equity %', type: 'number', required: true, min: 0, max: 100 },
-                  { name: 'founder2Name', label: 'Founder 2 Full Name', type: 'text', required: true },
-                  { name: 'founder2Equity', label: 'Founder 2 Equity %', type: 'number', required: true, min: 0, max: 100 },
-                  { name: 'vestingYears', label: 'Vesting Period (years)', type: 'number', required: true, value: 4 },
-                  { name: 'cliffMonths', label: 'Cliff Period (months)', type: 'number', required: true, value: 12 },
-                  { name: 'state', label: 'State/Jurisdiction', type: 'text', required: true }
-                ],
-                template: (data) => `
-                  <div class="space-y-6">
-                    <div class="text-center">
-                      <h1 class="text-3xl font-bold mb-2">FOUNDERS AGREEMENT</h1>
-                      <p class="text-lg">${data.companyName}</p>
-                      <p class="text-sm text-gray-600">Effective Date: ${new Date().toLocaleDateString()}</p>
-                    </div>
-                    <div class="border-t border-gray-300 pt-6">
-                      <h2 class="text-xl font-semibold mb-4">1. PARTIES</h2>
-                      <ul class="list-disc ml-6 space-y-1">
-                        <li>${data.founder1Name} ("Founder 1")</li>
-                        <li>${data.founder2Name} ("Founder 2")</li>
-                      </ul>
-                      <p class="mt-2">Collectively, the "Founders" of ${data.companyName} ("Company").</p>
-                    </div>
-                    <div>
-                      <h2 class="text-xl font-semibold mb-4">2. EQUITY ALLOCATION</h2>
-                      <ul class="list-disc ml-6 space-y-1">
-                        <li>${data.founder1Name}: ${data.founder1Equity}%</li>
-                        <li>${data.founder2Name}: ${data.founder2Equity}%</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h2 class="text-xl font-semibold mb-4">3. VESTING SCHEDULE</h2>
-                      <ul class="list-disc ml-6 space-y-2">
-                        <li><strong>Vesting:</strong> ${data.vestingYears} years</li>
-                        <li><strong>Cliff:</strong> ${data.cliffMonths} months</li>
-                        <li><strong>Monthly vesting</strong> after cliff</li>
-                        <li><strong>Termination:</strong> Unvested equity is forfeited</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h2 class="text-xl font-semibold mb-4">4. ROLES AND RESPONSIBILITIES</h2>
-                      <ul class="list-disc ml-6 space-y-1">
-                        <li>Contribute time and effort</li>
-                        <li>Act in the Company’s best interests</li>
-                        <li>Maintain confidentiality</li>
-                        <li>No competition during tenure</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h2 class="text-xl font-semibold mb-4">5. INTELLECTUAL PROPERTY</h2>
-                      <p>All related IP is assigned to the Company.</p>
-                    </div>
-                    <div>
-                      <h2 class="text-xl font-semibold mb-4">6. DECISION MAKING</h2>
-                      <p>Unanimous approval required for: sale/merger, new equity, material debt, changes to this Agreement.</p>
-                    </div>
-                    <div>
-                      <h2 class="text-xl font-semibold mb-4">7. CONFIDENTIALITY</h2>
-                      <p>Maintain strict confidentiality during and after engagement.</p>
-                    </div>
-                    <div>
-                      <h2 class="text-xl font-semibold mb-4">8. DISPUTE RESOLUTION</h2>
-                      <p>Mediation then binding arbitration under the laws of ${data.state}.</p>
-                    </div>
-                    <div class="border-t border-gray-300 pt-6 mt-8">
-                      <p class="text-sm text-gray-600 mb-8">IN WITNESS WHEREOF, the Founders execute as of the date above.</p>
-                      <div class="grid grid-cols-2 gap-8">
-                        <div>
-                          <div class="border-t border-gray-400 pt-2">
-                            <p class="font-semibold">${data.founder1Name}</p>
-                            <p class="text-sm text-gray-600">Founder 1</p>
-                            <p class="text-sm text-gray-600 mt-2">Date: _______________</p>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="border-t border-gray-400 pt-2">
-                            <p class="font-semibold">${data.founder2Name}</p>
-                            <p class="text-sm text-gray-600">Founder 2</p>
-                            <p class="text-sm text-gray-600 mt-2">Date: _______________</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-6">
-                      <p class="text-sm font-semibold text-yellow-800 mb-1">⚠️ Legal Disclaimer</p>
-                      <p class="text-sm text-yellow-700">Educational template only. Consult a qualified attorney before signing.</p>
-                    </div>
-                  </div>
-                `
-              }
+    { name: 'companyName', label: 'Company Name', type: 'text', required: true },
+    { name: 'founder1Name', label: 'Founder 1 Full Name', type: 'text', required: true },
+    { name: 'founder1Equity', label: 'Founder 1 Equity %', type: 'number', required: true, min: 0, max: 100 },
+    { name: 'founder2Name', label: 'Founder 2 Full Name', type: 'text', required: true },
+    { name: 'founder2Equity', label: 'Founder 2 Equity %', type: 'number', required: true, min: 0, max: 100 },
+    { name: 'vestingYears', label: 'Vesting Period (years)', type: 'number', required: true, value: 4 },
+    { name: 'cliffMonths', label: 'Cliff Period (months)', type: 'number', required: true, value: 12 },
+    { name: 'state', label: 'Governing Law / Jurisdiction', type: 'text', required: true, value: 'England and Wales' }
+  ],
+  template: (data) => `
+    <div class="space-y-6">
+      <div class="text-center">
+        <h1 class="text-3xl font-bold mb-2">FOUNDERS AGREEMENT</h1>
+        <p class="text-lg font-semibold">${data.companyName ? data.companyName : ''}</p>
+        <p class="text-sm text-gray-600">Effective Date: ${new Date().toLocaleDateString()}</p>
+      </div>
+
+      <div class="border-t border-gray-300 pt-6">
+        <h2 class="text-xl font-semibold mb-3">THIS FOUNDERS AGREEMENT</h2>
+        <p>This Founders Agreement (“Agreement”) is made and entered into as of the Effective Date above by and between the persons named below (each a “Founder”, and together the “Founders”) with respect to the formation and governance of ${data.companyName ? data.companyName : 'the Company'} (the “Company”).</p>
+      </div>
+
+      <section>
+        <h3 class="text-lg font-semibold mt-4">1. PARTIES</h3>
+        <ul class="list-disc ml-6 mt-2">
+          <li>${data.founder1Name ? data.founder1Name : 'Founder 1'} (“Founder 1”)</li>
+          <li>${data.founder2Name ? data.founder2Name : 'Founder 2'} (“Founder 2”)</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3 class="text-lg font-semibold mt-4">2. EQUITY ALLOCATION</h3>
+        <ul class="list-disc ml-6 mt-2">
+          <li>${data.founder1Name ? data.founder1Name : 'Founder 1'}: ${data.founder1Equity ?? ''}%</li>
+          <li>${data.founder2Name ? data.founder2Name : 'Founder 2'}: ${data.founder2Equity ?? ''}%</li>
+        </ul>
+        <p class="mt-2">Any remaining equity may be reserved for an employee option pool, future investors, or other allocations as agreed by the Founders.</p>
+      </section>
+
+      <section>
+        <h3 class="text-lg font-semibold mt-4">3. ROLES AND TITLES</h3>
+        <p class="ml-0">Initial roles shall be as agreed between the Founders (to be recorded separately or updated by mutual written agreement). The Founders may amend roles and titles by mutual written consent.</p>
+      </section>
+
+      <section>
+        <h3 class="text-lg font-semibold mt-4">4. VESTING</h3>
+        <ul class="list-disc ml-6 mt-2">
+          <li><strong>Vesting Period:</strong> ${data.vestingYears ?? ''} year(s) from the Effective Date.</li>
+          <li><strong>Cliff:</strong> ${data.cliffMonths ?? ''} month(s); no equity vests during the cliff period.</li>
+          <li><strong>Schedule:</strong> After the cliff, equity vests in equal monthly installments over the remaining vesting period.</li>
+          <li><strong>Termination:</strong> Any unvested equity at the date a Founder ceases to provide services is subject to forfeiture or repurchase by the Company on terms to be agreed.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3 class="text-lg font-semibold mt-4">5. INTELLECTUAL PROPERTY</h3>
+        <p>Each Founder hereby assigns to the Company all right, title and interest in and to any and all intellectual property, inventions, designs, works, source code, and other materials created by that Founder in connection with the Company’s business. The Founders agree that such materials shall be the exclusive property of the Company.</p>
+      </section>
+
+      <section>
+        <h3 class="text-lg font-semibold mt-4">6. FOUNDER RESPONSIBILITIES</h3>
+        <p>Each Founder agrees to:</p>
+        <ul class="list-disc ml-6 mt-2">
+          <li>Devote sufficient time and skill to their agreed role;</li>
+          <li>Act in good faith and in the best interests of the Company;</li>
+          <li>Not engage in direct competition with the Company during their tenure (subject to reasonable scope and duration); and</li>
+          <li>Perform duties to the best of their ability.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3 class="text-lg font-semibold mt-4">7. DECISION-MAKING</h3>
+        <p>Unanimous written consent of all Founders shall be required for the following matters, unless otherwise agreed:</p>
+        <ul class="list-disc ml-6 mt-2">
+          <li>Sale, merger, or dissolution of the Company;</li>
+          <li>Issuance of additional equity or material changes to the capital structure;</li>
+          <li>Incurring material debt above thresholds agreed by the Founders;</li>
+          <li>Amendments to this Agreement; and</li>
+          <li>Significant changes to Founder roles or compensation.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3 class="text-lg font-semibold mt-4">8. CONFIDENTIALITY</h3>
+        <p>Each Founder shall keep confidential all non-public Company information and trade secrets during and after their involvement with the Company, except as required by law or agreed in writing.</p>
+      </section>
+
+      <section>
+        <h3 class="text-lg font-semibold mt-4">9. DISPUTE RESOLUTION</h3>
+        <p>Any dispute arising out of or relating to this Agreement shall first be referred to mediation. If mediation does not resolve the dispute, it shall be finally resolved by binding arbitration under the laws of ${data.state ? data.state : 'the specified jurisdiction'}.</p>
+      </section>
+
+      <section>
+        <h3 class="text-lg font-semibold mt-4">10. ENTIRE AGREEMENT</h3>
+        <p>This Agreement constitutes the entire agreement between the Founders regarding its subject matter and supersedes all prior agreements, understandings, and representations (oral or written). Any amendment must be in writing and signed by all Founders.</p>
+      </section>
+
+      <div class="border-t border-gray-300 pt-6 mt-6">
+        <p class="text-sm text-gray-600 mb-6">IN WITNESS WHEREOF, the Founders have executed this Agreement as of the Effective Date first written above.</p>
+
+        <div class="grid grid-cols-2 gap-8">
+          <div>
+            <div class="border-t border-gray-400 pt-3">
+              <p class="font-semibold">${data.founder1Name ? data.founder1Name : 'Founder 1'}</p>
+              <p class="text-sm text-gray-600">Founder 1</p>
+              <p class="text-sm text-gray-600 mt-2">Date: _______________</p>
+            </div>
+          </div>
+          <div>
+            <div class="border-t border-gray-400 pt-3">
+              <p class="font-semibold">${data.founder2Name ? data.founder2Name : 'Founder 2'}</p>
+              <p class="text-sm text-gray-600">Founder 2</p>
+              <p class="text-sm text-gray-600 mt-2">Date: _______________</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-6">
+        <p class="text-sm font-semibold text-yellow-800 mb-1">⚠ Legal Disclaimer</p>
+        <p class="text-sm text-yellow-700">This template is provided for educational purposes only and does not constitute legal advice. Founders should obtain independent legal review before executing any agreement.</p>
+      </div>
+    </div>
+  `
+}
             ];
 
             let currentTemplate = templates[0];

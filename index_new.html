@@ -299,16 +299,13 @@ A Founders Agreement outlines the relationship between co-founders of a startup.
 
 **Disclaimer**
 <div class="space-y-6"> Nothing in this product or the website is intended to be nor should be construed as legal advice. This is an educational project created by students. Please consult your lawyer for legal advice.
-                `,
+</div>
+`,
                 fields: [
-    { name: 'companyName', label: 'Company Name', type: 'text', required: true },
-    { name: 'founder1Name', label: 'Founder 1 Full Name', type: 'text', required: true },
-    { name: 'founder1Equity', label: 'Founder 1 Equity %', type: 'number', required: true, min: 0, max: 100 },
-    { name: 'founder2Name', label: 'Founder 2 Full Name', type: 'text', required: true },
-    { name: 'founder2Equity', label: 'Founder 2 Equity %', type: 'number', required: true, min: 0, max: 100 },
-    { name: 'vestingYears', label: 'Vesting Period (years)', type: 'number', required: true, value: 4 },
-    { name: 'cliffMonths', label: 'Cliff Period (months)', type: 'number', required: true, value: 12 },
-    { name: 'state', label: 'Governing Law / Jurisdiction', type: 'text', required: true, value: 'England and Wales' }
+  { name: 'companyName', label: 'Company Name', type: 'text', required: true },
+  { name: 'vestingYears', label: 'Vesting Period (years)', type: 'number', required: true, value: 4 },
+  { name: 'cliffMonths', label: 'Cliff Period (months)', type: 'number', required: true, value: 12 },
+  { name: 'state', label: 'Governing Law / Jurisdiction', type: 'text', required: true, value: 'England and Wales' }
   ],
   template: (data) => `
     <div class="space-y-6">
@@ -324,21 +321,23 @@ A Founders Agreement outlines the relationship between co-founders of a startup.
       </div>
 
       <section>
-        <h3 class="text-lg font-semibold mt-4">1. PARTIES</h3>
-        <ul class="list-disc ml-6 mt-2">
-          <li>${data.founder1Name ? data.founder1Name : 'Founder 1'} (“Founder 1”)</li>
-          <li>${data.founder2Name ? data.founder2Name : 'Founder 2'} (“Founder 2”)</li>
-        </ul>
-      </section>
+  <h3 class="text-lg font-semibold mt-4">1. PARTIES</h3>
+  <ul class="list-disc ml-6 mt-2">
+    ${(data.founders || []).map((f, i) =>
+      `<li>${escapeHtml(f.name || `Founder ${i + 1}`)} (“Founder ${i + 1}”)</li>`
+    ).join('')}
+  </ul>
+</section>
 
-      <section>
-        <h3 class="text-lg font-semibold mt-4">2. EQUITY ALLOCATION</h3>
-        <ul class="list-disc ml-6 mt-2">
-          <li>${data.founder1Name ? data.founder1Name : 'Founder 1'}: ${data.founder1Equity ?? ''}%</li>
-          <li>${data.founder2Name ? data.founder2Name : 'Founder 2'}: ${data.founder2Equity ?? ''}%</li>
-        </ul>
-        <p class="mt-2">Any remaining equity may be reserved for an employee option pool, future investors, or other allocations as agreed by the Founders.</p>
-      </section>
+     <section>
+  <h3 class="text-lg font-semibold mt-4">2. EQUITY ALLOCATION</h3>
+  <ul class="list-disc ml-6 mt-2">
+    ${(data.founders || []).map((f, i) =>
+      `<li>${escapeHtml(f.name || `Founder ${i + 1}`)}: ${Number(f.equity).toFixed(2).replace(/\.00$/, '')}%</li>`
+    ).join('')}
+  </ul>
+  <p class="mt-2">Any remaining equity may be reserved for an employee option pool, future investors, or other allocations as agreed by the Founders.</p>
+</section>
 
       <section>
         <h3 class="text-lg font-semibold mt-4">3. ROLES AND TITLES</h3>
@@ -401,22 +400,18 @@ A Founders Agreement outlines the relationship between co-founders of a startup.
       <div class="border-t border-gray-300 pt-6 mt-6">
         <p class="text-sm text-gray-600 mb-6">IN WITNESS WHEREOF, the Founders have executed this Agreement as of the Effective Date first written above.</p>
 
-        <div class="grid grid-cols-2 gap-8">
-          <div>
-            <div class="border-t border-gray-400 pt-3">
-              <p class="font-semibold">${data.founder1Name ? data.founder1Name : 'Founder 1'}</p>
-              <p class="text-sm text-gray-600">Founder 1</p>
-              <p class="text-sm text-gray-600 mt-2">Date: _______________</p>
-            </div>
-          </div>
-          <div>
-            <div class="border-t border-gray-400 pt-3">
-              <p class="font-semibold">${data.founder2Name ? data.founder2Name : 'Founder 2'}</p>
-              <p class="text-sm text-gray-600">Founder 2</p>
-              <p class="text-sm text-gray-600 mt-2">Date: _______________</p>
-            </div>
-          </div>
-        </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+  ${(data.founders || []).map((f, i) => `
+    <div>
+      <div class="border-t border-gray-400 pt-3">
+        <p class="font-semibold">${escapeHtml(f.name || `Founder ${i + 1}`)}</p>
+        <p class="text-sm text-gray-600">Founder ${i + 1}</p>
+        <p class="text-sm text-gray-600 mt-2">Date: _______________</p>
+      </div>
+    </div>
+  `).join('')}
+</div>
+
       </div>
 
       <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-6">
@@ -430,6 +425,139 @@ A Founders Agreement outlines the relationship between co-founders of a startup.
 
             let currentTemplate = templates[0];
             let generatedDocument = null;
+// ===== Dynamic founders (copy/paste this whole block) =====
+function escapeHtml(str = '') {
+  return String(str).replace(/[&<>"']/g, (m) => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  }[m]));
+}
+
+let foundersState = [
+  { name: '', equity: '' },
+  { name: '', equity: '' }
+];
+
+function initFounders() {
+  if (!Array.isArray(foundersState) || foundersState.length < 2) {
+    foundersState = [{ name: '', equity: '' }, { name: '', equity: '' }];
+  }
+  renderFounders();
+}
+
+function addFounder() {
+  foundersState.push({ name: '', equity: '' });
+  renderFounders();
+}
+
+function removeFounder(idx) {
+  if (foundersState.length <= 2) return;
+  foundersState.splice(idx, 1);
+  renderFounders();
+}
+
+function handleFounderInput(idx, field, value) {
+  foundersState[idx][field] = value;
+  updateEquityTotal();
+}
+
+function getEquityTotal(founders) {
+  return founders.reduce((sum, f) => {
+    const n = Number(f.equity);
+    return sum + (Number.isFinite(n) ? n : 0);
+  }, 0);
+}
+
+function updateEquityTotal() {
+  const totalEl = document.getElementById('equityTotal');
+  if (!totalEl) return;
+  const total = getEquityTotal(foundersState);
+  totalEl.textContent = total.toFixed(2).replace(/\.00$/, '');
+}
+
+function showFounderError(msg) {
+  const el = document.getElementById('founderError');
+  if (!el) return;
+  if (!msg) { el.classList.add('hidden'); el.textContent = ''; return; }
+  el.textContent = msg;
+  el.classList.remove('hidden');
+}
+
+function validateFounders(founders) {
+  if (founders.length < 2) return 'Please keep at least 2 founders.';
+
+  for (let i = 0; i < founders.length; i++) {
+    const f = founders[i];
+    const name = (f.name || '').trim();
+    const equity = Number(f.equity);
+
+    if (!name) return `Founder ${i + 1} name is required.`;
+    if (!Number.isFinite(equity)) return `Founder ${i + 1} equity must be a number.`;
+    if (equity < 0 || equity > 100) return `Founder ${i + 1} equity must be between 0 and 100.`;
+  }
+
+  const total = getEquityTotal(founders);
+  if (total > 100.01) return `Equity cannot exceed 100%. Current total is ${total.toFixed(2)}%.`;
+  return null;
+}
+
+function collectFounders() {
+  return foundersState.map((f) => ({
+    name: (f.name || '').trim(),
+    equity: Number(f.equity)
+  }));
+}
+
+function renderFounders() {
+  const wrap = document.getElementById('foundersWrap');
+  if (!wrap) return;
+
+  wrap.innerHTML = foundersState.map((f, i) => `
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-3 items-end">
+      <div class="md:col-span-7">
+        <label class="block text-sm font-medium mb-2">Founder ${i + 1} Full Name</label>
+        <input
+          type="text"
+          value="${escapeHtml(f.name)}"
+          oninput="handleFounderInput(${i}, 'name', this.value)"
+          required
+          class="w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-indigo-600"
+        />
+      </div>
+
+      <div class="md:col-span-3">
+        <label class="block text-sm font-medium mb-2">Equity %</label>
+        <input
+          type="number"
+          min="0"
+          max="100"
+          step="0.01"
+          value="${escapeHtml(f.equity)}"
+          oninput="handleFounderInput(${i}, 'equity', this.value)"
+          required
+          class="w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-indigo-600"
+        />
+      </div>
+
+      <div class="md:col-span-2 flex md:justify-end">
+        ${foundersState.length > 2 ? `
+          <button type="button" onclick="removeFounder(${i})"
+            class="w-full md:w-auto px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50">
+            Remove
+          </button>
+        ` : `<div class="h-10"></div>`}
+      </div>
+    </div>
+  `).join('');
+
+  updateEquityTotal();
+  showFounderError(null);
+}
+
+window.initFounders = initFounders;
+window.addFounder = addFounder;
+window.removeFounder = removeFounder;
+window.handleFounderInput = handleFounderInput;
+// ===== End dynamic founders =====
 
             function showTemplateDetails(){
               const container = document.getElementById('templateDetails');
@@ -447,7 +575,24 @@ A Founders Agreement outlines the relationship between co-founders of a startup.
                   </div>
                   <div class="bg-white rounded-lg p-6 border border-gray-200">
                     <h3 class="text-xl font-semibold mb-4">Fill in Your Details</h3>
-                    <form id="templateForm" onsubmit="generateDocument(event)" class="space-y-4">
+                    <form id="templateForm" onsubmit="generateDocument(event)" class="space-y-6">
+                    <div class="bg-white rounded-lg p-6 border border-gray-200">
+  <div class="flex items-center justify-between gap-3">
+    <h4 class="text-lg font-semibold">Founders</h4>
+    <button type="button" onclick="addFounder()"
+      class="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50">
+      Add founder
+    </button>
+  </div>
+
+  <p class="text-sm text-gray-600 mt-2">
+    Equity should total 100% or less.
+    Total equity: <span id="equityTotal">0</span>%
+  </p>
+
+  <div id="foundersWrap" class="mt-5 space-y-4"></div>
+  <p id="founderError" class="hidden mt-3 text-sm text-red-600"></p>
+</div>
                       ${currentTemplate.fields.map(field => `
                         <div>
                           <label class="block text-sm font-medium mb-2">${field.label}</label>
@@ -463,17 +608,30 @@ A Founders Agreement outlines the relationship between co-founders of a startup.
                   </div>
                 </div>`;
               container.innerHTML = html;
+              initFounders();
             }
 
-            function generateDocument(e){
-              e.preventDefault();
-              const form = e.target;
-              const formData = new FormData(form);
-              const data = {};
-              for (const [k,v] of formData.entries()) data[k]=v;
-              generatedDocument = currentTemplate.template(data);
-              showPreview();
-            }
+        function generateDocument(e){
+  e.preventDefault();
+
+  const form = e.target;
+  const formData = new FormData(form);
+  const data = {};
+
+  for (const [k,v] of formData.entries()) data[k] = v;
+
+  const founders = collectFounders();
+  const err = validateFounders(founders);
+  if (err) {
+    showFounderError(err);
+    return;
+  }
+
+  data.founders = founders;
+
+  generatedDocument = currentTemplate.template(data);
+  showPreview();
+}
 
             function showPreview(){
               const modal = document.getElementById('previewModal');
